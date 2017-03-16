@@ -1,2 +1,2 @@
 # teal-process
-Teal Process Inc.
+Teal Process & Co. (Formerly known as Teal Process Inc.)

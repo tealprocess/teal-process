@@ -1,0 +1,39 @@
+{
+  "name": "teal-process",
+  "version": "0.0.0",
+  "engines": {
+    "node": "4.1.1"
+  },
+  "description": "Teal Process & Co.",
+  "main": "server.js",
+  "scripts": {
+    "css": "node-sass public/sass -o public/css",
+    "css:watch": "npm run css && node-sass public/sass -wo public/css",
+    "dev": "npm start & npm run css:watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mattohagan/teal-process.git"
+  },
+  "keywords": [
+    "teal"
+  ],
+  "author": "mattohagan",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mattohagan/teal-process/issues"
+  },
+  "homepage": "https://github.com/mattohagan/teal-process",
+  "dependencies": {
+    "body-parser": "*",
+    "express": "^4.6.1",
+    "express-redirect": "^1.2.2",
+    "fs": "0.0.2",
+    "jade": "^1.9.2",
+    "json": "^9.0.3",
+    "logfmt": "^1.1.2",
+    "node-sass": "^3.13.1",
+    "path": "^0.11.14",
+    "request": "^2.39.0"
+  }
+}
