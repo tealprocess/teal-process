@@ -1,2 +1,287 @@
 html, body {
   height: 100%; }
+
+/*
+  Player Skin Designer for Video.js
+  http://videojs.com
+
+  To customize the player skin edit 
+  the CSS below. Click "details" 
+  below to add comments or questions.
+  This file uses some SCSS. Learn more  
+  at http://sass-lang.com/guide)
+
+  This designer can be linked to at:
+  http://codepen.io/heff/pen/EarCt/left/?editors=010
+*/
+.video-js {
+  /* The base font size controls the size of everything, not just text.
+     All dimensions use em-based sizes so that the scale along with the font size.
+     Try increasing it to 15px and see what happens. */
+  font-size: 10px;
+  /* The main font color changes the ICON COLORS as well as the text */
+  color: #fff; }
+
+/* The "Big Play Button" is the play button that shows before the video plays.
+   To center it set the align values to center and middle. The typical location
+   of the button is the center, but there is trend towards moving it to a corner
+   where it gets out of the way of valuable content in the poster image.*/
+.vjs-default-skin .vjs-big-play-button {
+  /* The font size is what makes the big play button...big. 
+     All width/height values use ems, which are a multiple of the font size.
+     If the .video-js font-size is 10px, then 3em equals 30px.*/
+  font-size: 10em;
+  transition: none;
+  /* We're using SCSS vars here because the values are used in multiple places.
+     Now that font size is set, the following em values will be a multiple of the
+     new font size. If the font-size is 3em (30px), then setting any of
+     the following values to 3em would equal 30px. 3 * font-size. */
+  /* 1.5em = 45px default */
+  line-height: 1.5em;
+  height: 1.5em;
+  width: 3em;
+  /* 0.06666em = 2px default */
+  border: 0.06666em solid #fff;
+  /* 0.3em = 9px default */
+  border-radius: 0.3em;
+  border: 0;
+  /* Align center */
+  left: 50%;
+  top: 50%;
+  margin-left: -1.5em;
+  margin-top: -0.75em; }
+  .vjs-default-skin .vjs-big-play-button:hover {
+    background: none; }
+
+.video-js:hover .vjs-big-play-button {
+  font-size: 9em; }
+
+.video-js.vjs-fluid {
+  box-shadow: 0 4px 5px rgba(0, 0, 0, 0.1); }
+
+/* The default color of control backgrounds is mostly black but with a little
+   bit of blue so it can still be seen on all-black video frames, which are common. */
+.video-js .vjs-control-bar,
+.video-js .vjs-big-play-button,
+.video-js .vjs-menu-button .vjs-menu-content {
+  /* IE8 - has no alpha support */
+  background-color: transparent;
+  /* Opacity: 1.0 = 100%, 0.0 = 0% */
+  background-color: transparent !important; }
+
+/* Slider - used for Volume bar and Progress bar */
+.video-js .vjs-slider {
+  background-color: #fff;
+  background-color: rgba(255, 255, 255, 0.5) !important; }
+
+.vjs-volume-menu-button {
+  display: none; }
+
+/* The slider bar color is used for the progress bar and the volume bar
+   (the first two can be removed after a fix that's coming) */
+.video-js .vjs-volume-level,
+.video-js .vjs-play-progress,
+.video-js .vjs-slider-bar {
+  background: #fff; }
+
+/* The main progress bar also has a bar that shows how much has been loaded. */
+.video-js .vjs-load-progress {
+  /* For IE8 we'll lighten the color */
+  background: white;
+  /* Otherwise we'll rely on stacked opacities */
+  background: rgba(255, 255, 255, 0.5); }
+
+.vjs-playback-rate {
+  display: none; }
+
+/* The load progress bar also has internal divs that represent
+   smaller disconnected loaded time ranges */
+.video-js .vjs-load-progress div {
+  /* For IE8 we'll lighten the color */
+  background: white;
+  /* Otherwise we'll rely on stacked opacities */
+  background: rgba(255, 255, 255, 0.75); }
+
+.hero {
+  height: 110vh;
+  background-image: url("/img/gassed/hero-bg.jpg");
+  background-size: 130%;
+  background-position: 50% 65%;
+  display: flex;
+  align-items: center;
+  justify-content: center; }
+  .hero .container {
+    margin-top: -16vh;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center; }
+    .hero .container .title {
+      font-family: "Didot", "serif";
+      font-size: 5.5rem; }
+    .hero .container .time {
+      font-family: "DIN Condensed";
+      font-size: 2rem;
+      margin-top: 1rem; }
+    .hero .container #mouse {
+      width: 5%;
+      margin-top: 10rem; }
+
+/* used for sections with full-width graidents */
+.full-width-cont {
+  width: 100%;
+  overflow: hidden;
+  height: auto; }
+
+.container#getting-ready .box {
+  border: 3px solid #9BC8A2; }
+
+.container#crew-wave .box {
+  border: 3px solid #FAC990; }
+
+.container#socializing .box {
+  border: 3px solid #C8C1ED; }
+
+.container#anti-social .box {
+  border: 3px solid #C6C6C6; }
+
+.container#partys-over .box {
+  border: 3px solid #ED7474; }
+
+.container#film .box {
+  border: 3px solid #A9CBE1; }
+
+.container#film .center {
+  width: 110%;
+  margin-left: -5%; }
+
+.container#film .box {
+  padding-top: 8rem;
+  padding-bottom: 8rem; }
+
+.container .section {
+  margin-bottom: 35rem; }
+  .container .section .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 2.8rem; }
+    .container .section .header .title {
+      font-family: "Hoefler Text", "serif";
+      font-size: 3.3rem; }
+      .container .section .header .title i {
+        width: 20px;
+        height: 20px;
+        background: #4990E2;
+        opacity: 0.4;
+        margin-right: 1rem; }
+    .container .section .header .time {
+      font-family: "DIN Condensed";
+      font-size: 2.3rem; }
+  .container .section .box .center {
+    width: 100%;
+    display: flex;
+    justify-content: center; }
+  .container .section .box .left {
+    float: left; }
+  .container .section .box .right {
+    float: right; }
+  .container .section .box:after {
+    content: ".";
+    visibility: hidden;
+    display: block;
+    height: 0;
+    clear: both; }
+  .container .section .box .cover.top {
+    margin-top: -3px; }
+  .container .section .box .cover.right {
+    margin-right: -3px; }
+  .container .section .box .cover.bottom {
+    margin-bottom: -3px; }
+  .container .section .box .cover.left {
+    margin-left: -3px; }
+
+.container.preface {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20rem; }
+  .container.preface .header {
+    display: flex;
+    align-items: baseline; }
+    .container.preface .header .title {
+      font-family: "Hoefler Text", "serif";
+      font-size: 3.3rem; }
+      .container.preface .header .title i {
+        width: 20px;
+        height: 20px;
+        background: #4990E2;
+        opacity: 0.4;
+        margin-right: 1rem; }
+  .container.preface .text {
+    font-family: "Hoefler Text", "serif";
+    font-size: 1.8rem;
+    padding: 7rem 10rem 12rem 10rem;
+    border: 3px solid #4990E2; }
+    .container.preface .text.sans-border {
+      border: 0;
+      padding-top: 3rem; }
+  .container.preface .characters-container {
+    margin-top: calc((100% * (1/4) - 10px - 1px) / 2 * -1);
+    width: 120%;
+    margin-left: -10%; }
+    .container.preface .characters-container .characters {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between; }
+      .container.preface .characters-container .characters .image {
+        width: calc(100% * (1/4) - 30px - 1px);
+        height: calc(100% * (1/4) - 30px - 1px);
+        background-size: cover;
+        margin-left: 30px;
+        margin-bottom: 30px; }
+        .container.preface .characters-container .characters .image:nth-child(1), .container.preface .characters-container .characters .image:nth-child(5), .container.preface .characters-container .characters .image:nth-child(9) {
+          margin-left: 0; }
+        .container.preface .characters-container .characters .image img {
+          width: 100%;
+          height: 100%;
+          box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.33);
+          margin-bottom: 0.4rem; }
+        .container.preface .characters-container .characters .image:after {
+          content: attr(data-name);
+          left: 0;
+          font-size: 1.8rem;
+          font-family: "Hoefler Text", "serif"; }
+  .container.preface .sounds .line {
+    height: 3px;
+    width: 160%;
+    margin-left: -30%;
+    margin-top: 5rem;
+    background-color: #4990E2; }
+    .container.preface .sounds .line:after {
+      width: 3px;
+      height: 1.4rem;
+      margin-left: 13%;
+      position: absolute;
+      content: "";
+      background-color: #4990E2; }
+
+.container#getting-ready .gradient {
+  height: 130vh;
+  width: calc(100vw + 4px);
+  margin-left: -25vw;
+  background: #954e47;
+  /* Old Browsers */
+  background: -moz-linear-gradient(top, #954e47 0%, #9d4a3d 24%, #447eb1 43%, #447eb1 100%);
+  /* FF3.6+ */
+  background: -webkit-gradient(left top, left bottom, color-stop(0%, #954e47), color-stop(24%, #9d4a3d), color-stop(43%, #447eb1), color-stop(100%, #447eb1));
+  /* Chrome, Safari4+ */
+  background: -webkit-linear-gradient(top, #954e47 0%, #9d4a3d 24%, #447eb1 43%, #447eb1 100%);
+  /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top, #954e47 0%, #9d4a3d 24%, #447eb1 43%, #447eb1 100%);
+  /* Opera 11.10+ */
+  background: -ms-linear-gradient(top, #954e47 0%, #9d4a3d 24%, #447eb1 43%, #447eb1 100%);
+  /* IE 10+ */
+  background: linear-gradient(to bottom, #954e47 0%, #9d4a3d 24%, #447eb1 43%, #447eb1 100%);
+  /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#954e47', endColorstr='#447eb1', GradientType=0 );
+  /* IE6-9 */ }

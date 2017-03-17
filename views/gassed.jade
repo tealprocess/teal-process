@@ -4,13 +4,129 @@ block title
 	| Gassed Up
 
 block localcss
+	link(rel='stylesheet' type='text/css' href='https://vjs.zencdn.net/5-unsafe/video-js.css')
 	link(rel='stylesheet' type='text/css' href='css/gassed.css')
+
 block localscripts
+	script(src='js/bodymovin.min.js')
 	script(src='js/gassed.js')
+	script(src='https://vjs.zencdn.net/5-unsafe/video.js')
 
 block content
-	.container.hero
-	.container.content
+	.hero
+		.container
+			.title A Gassed Up Party
+			.time 6 HR 30 M
+			#mouse
+
+	.container.preface
+		.six.columns
+			.header
+				.title 
+					i
+					| Preface
+			.text
+				| We threw a surprise birthday party for our friend, but they couldn’t make it. 
+				br
+				br
+				| We also paid the photgrapher upfront, so we didn’t know what to do with these photos.
+				br
+				br
+				| Here are the friends that did show up.
+			.characters-container
+				.characters
+					.image(data-name="Giraffe")
+						img(src="/img/gassed/giraffe.png")
+					.image(data-name="Giraffe")
+						img(src="/img/gassed/giraffe.png")
+					.image(data-name="Giraffe")
+						img(src="/img/gassed/giraffe.png")
+					.image(data-name="Giraffe")
+						img(src="/img/gassed/giraffe.png")
+
+					.image(data-name="Giraffe")
+						img(src="/img/gassed/giraffe.png")
+					.image(data-name="Giraffe")
+						img(src="/img/gassed/giraffe.png")
+					.image(data-name="Giraffe")
+						img(src="/img/gassed/giraffe.png")
+					.image(data-name="Giraffe")
+						img(src="/img/gassed/giraffe.png")
+
+					.image(data-name="Giraffe")
+						img(src="/img/gassed/giraffe.png")
+
+			.text.sans-border
+				| We don't remember anyone else's name, but we recorded the party.
+				br
+				.sounds
+					.line
+
+	.full-width-cont
+		.container#getting-ready
+			.section.twelve.columns
+				.header
+					.title
+						i
+						| Getting Ready
+					.time 14:12:62 PM
+				.box
+					img(style='margin-right: -7rem' src="/img/gassed/giraffe.png").right.cover.top
+					img(style='margin-top: 20rem' src="/img/gassed/giraffe.png").left
+					.u-cf
+					.gradient
+						.center
+							img(style='margin-top: 20rem; margin-bottom: -10rem;' src="/img/gassed/giraffe.png")
+					img(style='margin-right: -7rem' src="/img/gassed/giraffe.png").right.cover.top
+					.center
+						img(style='margin-top: 20rem; margin-bottom: -10rem;' src="/img/gassed/giraffe.png")
+
+		.container#crew-wave
+			.section.twelve.columns
+				.header
+					.title
+						i
+						| Crew Wave
+					.time 14:12:62 PM
+				.box
+					img(style='margin-right: -7rem' src="/img/gassed/giraffe.png").right.cover.top
+					img(style='margin-top: 20rem' src="/img/gassed/giraffe.png").left
+					.u-cf
+					.gradient
+					img(style='margin-right: -7rem' src="/img/gassed/giraffe.png").right.cover.top
+					.center
+						img(style='margin-top: 20rem; margin-bottom: -10rem;' src="/img/gassed/giraffe.png")
+
+		.container#socializing
+			.section.twelve.columns
+				.header
+					.title
+						i
+						| Socializing
+					.time 14:12:62 PM
+				.box
+					img(style='margin-right: -7rem' src="/img/gassed/giraffe.png").right.cover.top
+					img(style='margin-top: 20rem' src="/img/gassed/giraffe.png").left
+					.u-cf
+					.gradient
+					img(style='margin-right: -7rem' src="/img/gassed/giraffe.png").right.cover.top
+					.center
+						img(style='margin-top: 20rem; margin-bottom: -10rem;' src="/img/gassed/giraffe.png")
+
+		.container#film
+			.section.twelve.columns
+				.header
+					.title
+						i
+						| Film
+				.box
+					.center
+						<video id="my_video_1" class="video-js vjs-default-skin" width="960px" height="540px" controls preload="none" poster='/img/gassed/film-plate.jpg' data-setup='{ "aspectRatio":"1920:1080", "playbackRates": [1, 1.5, 2] }'>
+						<source src="/img/gassed/final.mp4" type='video/mp4' />
+						</video>
+
+
+
 		
 
 
