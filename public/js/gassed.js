@@ -1,14 +1,32 @@
+
 $(document).ready(function(){
-	
+	// blue, green, orange, red, blue
+	let colorList = ['#4990E2', '#9BC8A2', '#FAC990', '#ED7474', '#4990E2'];
+
+
 	startMouseAnimation();
 	createVideo();
 
 
-	resizeGradient('.gradient');
+	centerGradient('.gradient');
 	window.addEventListener('resize', throttle(function(ev) {
 		// callback
-		resizeGradient('.gradient');
+		centerGradient('.gradient');
 	}, 10));
+
+
+	// run through colors for link underline
+	$('.credits a').hover(function(){
+
+		// hover in
+		let color = colorList.shift();
+		colorList.push(color);
+		$(this).css('border-bottom', '2px solid'+color);
+
+	}, function(){
+		// hover out
+		$(this).css('border-bottom', '2px solid rgba(0,0,0,0.1)');
+	});
 
 });
 
@@ -27,6 +45,7 @@ function startMouseAnimation(){
     anim = bodymovin.loadAnimation(params);
 }
 
+// using video.js
 function createVideo(){
 	var $refreshButton = $('#refresh');
 	var $results = $('#css_result');
@@ -45,11 +64,13 @@ function createVideo(){
 	});
 }
 
-function resizeGradient(tag){
+// centering the graidents
+function centerGradient(tag){
 	let parentBox = $(tag).parent();
 	let left = parentBox.offset().left + 4;
 	$(tag).css('margin-left', '-' + left + 'px');
 }
+
 
 function throttle(fn, delay) {
 	var allowSample = true;
@@ -62,7 +83,6 @@ function throttle(fn, delay) {
 		}
 	};
 }
-
 
 
 

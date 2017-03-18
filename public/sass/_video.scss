@@ -47,6 +47,7 @@ $center-big-play-button: true; // true default
      If the .video-js font-size is 10px, then 3em equals 30px.*/
   font-size: 10em;
   transition: none;
+  opacity: 0.9;
 
   /* We're using SCSS vars here because the values are used in multiple places.
      Now that font size is set, the following em values will be a multiple of the
@@ -90,8 +91,21 @@ $center-big-play-button: true; // true default
   }
 }
 
+.video-js .vjs-tech {
+  width: 102%;
+  height: 102%;
+  margin-left: -1px;
+
+}
+
 .video-js.vjs-fluid {
   box-shadow: 0 4px 5px rgba(0,0,0,0.1);
+}
+
+.video-js .vjs-poster {
+  width: 102%;
+  height: 102%;
+  margin-left: -1px;
 }
 
 /* The default color of control backgrounds is mostly black but with a little
