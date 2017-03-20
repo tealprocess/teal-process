@@ -13,116 +13,145 @@ block localscripts
 	script(src='https://vjs.zencdn.net/5-unsafe/video.js')
 
 block content
+	include gassed-nav
+
 	.hero
 		.container
 			.title A Gassed Up Party
 			.time 6 HR 30 M
 			#mouse
+		.bg-fade
 
-	.container.preface
-		.six.columns
-			.header
-				.title 
-					i
-					| Preface
-			.text
-				| We threw a surprise birthday party for our friend, but they couldn’t make it. 
-				br
-				br
-				| We also paid the photgrapher upfront, so we didn’t know what to do with these photos.
-				br
-				br
-				| Here are the friends that did show up.
-			.characters-container
-				.characters
-					.image(data-name="Giraffe")
-						img(src="/img/gassed/giraffe.png")
-					.image(data-name="Giraffe")
-						img(src="/img/gassed/giraffe.png")
-					.image(data-name="Giraffe")
-						img(src="/img/gassed/giraffe.png")
-					.image(data-name="Giraffe")
-						img(src="/img/gassed/giraffe.png")
+	.full-width-cont
+		.container.preface#preface
+			.six.columns
+				.header
+					.title 
+						include ../public/img/gassed/icons/0.svg
+						| Preface
+				.text
+					| We threw a surprise birthday party for our friend, but they couldn’t make it. 
+					br
+					br
+					| We also paid the photgrapher upfront, so we didn’t know what to do with these photos.
+					br
+					br
+					| Here are the friends that did show up.
+				.characters-container
+					.characters
+						.image(data-name="Giraffe")
+							img(src="/img/gassed/characters/giraffe.png")
+						.image(data-name="Xavier")
+							img(src="/img/gassed/characters/xavier.png")
+						.image(data-name="Bear")
+							img(src="/img/gassed/characters/bear.png")
+						.image(data-name="Olivia")
+							img(src="/img/gassed/characters/olivia.png")
 
-					.image(data-name="Giraffe")
-						img(src="/img/gassed/giraffe.png")
-					.image(data-name="Giraffe")
-						img(src="/img/gassed/giraffe.png")
-					.image(data-name="Giraffe")
-						img(src="/img/gassed/giraffe.png")
-					.image(data-name="Giraffe")
-						img(src="/img/gassed/giraffe.png")
+						.image(data-name="Bella")
+							img(src="/img/gassed/characters/bella.png")
+						.image(data-name="Rafi")
+							img(src="/img/gassed/characters/rafi.png")
+						.image(data-name="Norman")
+							img(src="/img/gassed/characters/norman.png")
+						.image(data-name="Blair")
+							img(src="/img/gassed/characters/blair.png")
 
-					.image(data-name="Giraffe")
-						img(src="/img/gassed/giraffe.png")
+						.image(data-name="Rose")
+							img(src="/img/gassed/characters/rose.png")
+						.image(data-name="Rose").empty
+							img(src="/img/gassed/characters/rose.png")
 
-			.text.sans-border
-				| We don't remember anyone else's name, but we recorded the party.
-				br
-				.sounds
-					.line
+				.text.sans-border
+					| We don't remember anyone else's name, but we recorded the party.
+					br
+					.sounds
+						.line
 
 	.full-width-cont
 		.container#getting-ready
 			.section.twelve.columns
 				.header
 					.title
-						i
+						include ../public/img/gassed/icons/1.svg
 						| Getting Ready
-					.time 14:12:62 PM
+					.time 20:12:52 PM
 				.box
-					img(style='width:43.7%; margin-right: -7rem;' src="/img/gassed/Getting Ready/1.jpg").right.cover.top
-					img(style='width:50.2%; margin-top: 22rem; margin-bottom: 3rem;' src="/img/gassed/Getting Ready/2.png").left
+					img(style='width:43.7%;' src="/img/gassed/Getting Ready/1.jpg").right.cover.top.no1
+					img(style='width:50.2%; margin-top: 22rem; margin-bottom: 13rem;' src="/img/gassed/Getting Ready/2.png").left
 					.center
-						img(style='width:87.9%; margin-bottom: 13rem;' src="/img/gassed/Getting Ready/3.png").left
+						div(style='width: 87.9%; margin-bottom: 13rem')
+							img(width='692' height='809' src="/img/gassed/Getting Ready/3.png")
 					.center
-						img(style='width:58.5%; margin-bottom: 10rem;' src="/img/gassed/Getting Ready/4.png").left
-						img(style='width:58.5%; margin-bottom: 23rem;' src="/img/gassed/Getting Ready/5.png").left
-					.u-cf
+						div(style='width:58.5%; margin-bottom: 8rem;')
+							img(src="/img/gassed/Getting Ready/4.png")
+					.center
+						div(style='width:58.5%; margin-bottom: 23rem;')
+							img(src="/img/gassed/Getting Ready/5.png")
+					img(style='z-index: 2; width:100%;' src="/img/gassed/Getting Ready/6.png")
+					.center
+						div(style='width:49.5%; margin-bottom: 8rem; z-index: -1;').no7
+							img(src="/img/gassed/Getting Ready/7.png")
+					.center
+						div(style='width:49.5%; margin-bottom: -3.3rem; z-index: 2;')
+							img(src="/img/gassed/Getting Ready/8.png")
 					.gradient
-						.center
-							img(style='margin-top: 20rem; margin-bottom: -10rem;' src="/img/gassed/giraffe.png")
-					img(style='margin-right: -7rem' src="/img/gassed/giraffe.png").right.cover.top
+						.center.container
+							.no9
+								img(src="/img/gassed/Getting Ready/9.png")
 					.center
-						img(style='margin-top: 20rem; margin-bottom: -10rem;' src="/img/gassed/giraffe.png")
+						div(style='width: 45.5%;').no10
+							img(src="/img/gassed/Getting Ready/10.png")
 
 		.container#crew-wave
 			.section.twelve.columns
 				.header
 					.title
-						i
+						include ../public/img/gassed/icons/2.svg
 						| Crew Wave
-					.time 14:12:62 PM
+					.time 22:44:26 PM
 				.box
 					img(style='margin-right: -7rem' src="/img/gassed/giraffe.png").right.cover.top
 					img(style='margin-top: 20rem' src="/img/gassed/giraffe.png").left
-					.u-cf
-					.gradient
-					img(style='margin-right: -7rem' src="/img/gassed/giraffe.png").right.cover.top
-					.center
-						img(style='margin-top: 20rem; margin-bottom: -10rem;' src="/img/gassed/giraffe.png")
 
 		.container#socializing
 			.section.twelve.columns
 				.header
 					.title
-						i
+						include ../public/img/gassed/icons/3.svg
 						| Socializing
-					.time 14:12:62 PM
+					.time 23:10:43 PM
 				.box
 					img(style='margin-right: -7rem' src="/img/gassed/giraffe.png").right.cover.top
 					img(style='margin-top: 20rem' src="/img/gassed/giraffe.png").left
-					.u-cf
-					.gradient
+
+		.container#anti-social
+			.section.twelve.columns
+				.header
+					.title
+						include ../public/img/gassed/icons/4.svg
+						| Anti-Social
+					.time 00:35:26 AM
+				.box
 					img(style='margin-right: -7rem' src="/img/gassed/giraffe.png").right.cover.top
-					.center
-						img(style='margin-top: 20rem; margin-bottom: -10rem;' src="/img/gassed/giraffe.png")
+					img(style='margin-top: 20rem' src="/img/gassed/giraffe.png").left
+
+		.container#partys-over
+			.section.twelve.columns
+				.header
+					.title
+						include ../public/img/gassed/icons/5.svg
+						| Party's Over
+					.time 02:12:52 AM
+				.box
+					img(style='margin-right: -7rem' src="/img/gassed/giraffe.png").right.cover.top
+					img(style='margin-top: 20rem' src="/img/gassed/giraffe.png").left
 
 		.container#film
 			.section.twelve.columns
 				.header
 					.title
-						i
+						include ../public/img/gassed/icons/6.svg
 						| Film
 				.box
 					.center

@@ -1,7 +1,10 @@
 
 $(document).ready(function(){
-	// blue, green, orange, red, blue
-	let colorList = ['#4990E2', '#9BC8A2', '#FAC990', '#ED7474', '#4990E2'];
+	// blue, green, orange, red
+	let colorList = ['#4990E2', '#9BC8A2', '#FAC990', '#ED7474'];
+	let sectionIds = ['#preface', '#getting-ready', '#crew-wave', '#socializing', '#anti-social', '#partys-over', '#film'];
+	let hiddenNav = false;
+	let navFirstShown = false;
 
 
 	startMouseAnimation();
@@ -15,6 +18,49 @@ $(document).ready(function(){
 	}, 10));
 
 
+	window.addEventListener('scroll', throttle(function(ev) {
+		let percents = [];
+		sectionIds.forEach(function(id){
+			let section = document.getElementById(id);
+			percents.push(percentOfView(id));
+		});
+
+		let index = indexOfMax(percents);
+		let id = sectionIds[index];
+
+		$('.nav-container a').addClass('inactive');
+		$(id+'-nav').removeClass('inactive');
+
+		// show nav one first scroll
+		if(!navFirstShown && id != '#preface') {
+			$('.nav-container').addClass('unhide');
+			navFirstShown = true;
+		}
+
+		// hide and show nav based on preface section scroll point
+		let abovePreface = ($(window).scrollTop() < ($('#preface').offset().top - 90));
+		if(navFirstShown && !hiddenNav && abovePreface){
+			$('.nav-container').removeClass('unhide');
+			hiddenNav = true;
+		} else if (navFirstShown && hiddenNav && !abovePreface) {
+			$('.nav-container').addClass('unhide');
+			hiddenNav = false;
+		}
+		
+
+	}, 12));
+
+
+	// set navigation scrolling
+	$('.nav-container a').each(function(){
+		$(this).click(function(e){
+			e.preventDefault();
+			let href = $(this).attr('href');
+			$('html,body').animate({scrollTop: $(href).offset().top - 80},'slow');
+		});
+	});
+
+
 	// run through colors for link underline
 	$('.credits a').hover(function(){
 
@@ -24,11 +70,52 @@ $(document).ready(function(){
 		$(this).css('border-bottom', '2px solid'+color);
 
 	}, function(){
-		// hover out
+		// hover out 
 		$(this).css('border-bottom', '2px solid rgba(0,0,0,0.1)');
 	});
 
 });
+
+function percentOfView(tag) {
+	
+    let height = $(tag).height();
+    let scrollTop = $(window).scrollTop();
+    let offsetToTop = $(tag).offset().top;
+    let windowHeight = $(window).height();
+
+    if(offsetToTop >= scrollTop) {
+    	let inView = windowHeight - (offsetToTop - scrollTop);
+	    let percentage = (inView / height) * 10;
+
+	    return percentage > 0 ? percentage : 0;
+
+    } else {	// offsetToTop < scrollTop
+
+    	let inView = height - (scrollTop - offsetToTop);
+    	let percentage = (inView / height) * 10;
+
+    	return percentage > 0 ? percentage : 0;
+    }
+}
+
+
+function indexOfMax(arr) {
+    if (arr.length === 0) {
+        return -1;
+    }
+
+    var max = arr[0];
+    var maxIndex = 0;
+
+    for (var i = 1; i < arr.length; i++) {
+        if (arr[i] > max) {
+            maxIndex = i;
+            max = arr[i];
+        }
+    }
+
+    return maxIndex;
+}
 
 
 function startMouseAnimation(){

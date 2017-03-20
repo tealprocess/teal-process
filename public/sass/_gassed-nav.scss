@@ -1,0 +1,273 @@
+$light-gray: #cacaca;
+
+@mixin crossBrowser($property, $css) {
+    -webkit-#{$property} : $css;
+    -moz-#{$property} : $css;
+    -o-#{$property} : $css;
+    #{$property} : $css;
+}
+
+@mixin crossBrowserTwoArgs($property, $css, $css2) {
+    -webkit-#{$property} : $css, $css2;
+    -moz-#{$property} : $css, $css2;
+    -o-#{$property} : $css, $css2;
+    #{$property} : $css, $css2;
+}
+
+.gassed-nav {
+	position: fixed;
+	height: 100%;
+	display: flex;
+	align-items: center;
+	
+
+	.nav-container {
+		padding: 0;
+		padding-left: 2.5rem;
+		position: relative;
+
+		&:hover {
+			a .title {
+				@include crossBrowser(transform, translate(0, 0));
+				opacity: 1;
+			}
+		}
+
+		&.hide {
+			a {
+				@include crossBrowser(transform, translate(-20px, 0));
+				opacity: 0;
+				pointer-events: none;
+				@include crossBrowserTwoArgs(transition, transform 150ms ease-in-out, opacity 150ms ease-in-out);
+			}
+		}
+
+		&.unhide {
+			a {
+				@include crossBrowser(transform, translate(0, 0));
+				opacity: 1;
+				pointer-events: all;
+			}
+		}
+	}
+
+	/* reset svg color on hover */
+	#preface-nav:hover {
+		.title {
+			color: $blue;
+		}
+
+		svg g g {
+			stroke: $blue;
+		}
+
+		svg g use:nth-of-type(1){
+			fill: $blue !important;
+		}
+	}
+
+	#getting-ready-nav:hover {
+		.title {
+			color: $green;
+		}
+
+		svg g g {
+			stroke: $green;
+		}
+	}
+
+	#crew-wave-nav:hover {
+		.title {
+			color: $orange;
+		}
+
+		svg g g {
+			stroke: $orange;
+		}
+	}
+
+	#socializing-nav:hover {
+		.title {
+			color: $purple;
+		}
+
+		svg g g {
+			stroke: $purple;
+		}
+	}
+
+	#anti-social-nav:hover {
+		.title {
+			color: $gray;
+		}
+
+		svg g g {
+			stroke: $gray;
+			fill: $gray !important;
+		}
+	}
+
+	#partys-over-nav:hover {
+		.title {
+			color: $red;
+		}
+
+		svg g g {
+			stroke: $red;
+		}
+	}
+
+	#film-nav:hover {
+		.title {
+			color: $light-blue;
+		}
+
+		svg g g {
+			stroke: $light-blue;
+		}
+
+		g rect:nth-of-type(2){
+			fill: $light-blue !important;
+		}
+	}
+
+	a {
+		text-decoration: none;
+		color: black;
+		display: flex;
+		align-items: center;
+		margin-top: 1.5rem;
+		margin-bottom: 1.5rem;
+		cursor: pointer;
+
+		@include crossBrowser(transform, translate(0, 0));
+		opacity: 1;
+
+		.icon {
+			display: flex;
+			width: 3.4rem;
+			justify-content: center;
+		}
+
+		svg {
+			width: 3rem;
+			height: 3rem;
+			float: left;
+		}
+
+		.title {
+			font-family: 'Hoefler Text', sans-serif;
+			font-size: 1.5rem;
+			margin-left: 1rem;
+			margin-bottom: -0.4rem;
+
+			@include crossBrowser(transform, translate(-10px, 0));
+			opacity: 0;
+			@include crossBrowserTwoArgs(transition, transform 150ms ease-in-out, opacity 150ms ease-in-out);
+		}
+
+		&#preface-nav {
+			@include crossBrowser(transition-delay, 0ms);
+
+			.title {
+				@include crossBrowser(transition-delay, 0ms);
+			}
+
+			svg {
+				height: 2.6rem;
+			}
+		}
+
+		&#getting-ready-nav {
+			@include crossBrowser(transition-delay, 20ms);
+
+			.title {
+				@include crossBrowser(transition-delay, 20ms);
+			}
+
+			svg {
+				margin-left: -0.4rem;
+			}
+		}
+
+		&#crew-wave-nav {
+			@include crossBrowser(transition-delay, 40ms);
+
+			.title {
+				@include crossBrowser(transition-delay, 40ms);
+			}
+		}
+
+		&#socializing-nav {
+			
+			@include crossBrowser(transition-delay, 60ms);
+
+			.title {
+				@include crossBrowser(transition-delay, 60ms);
+			}
+		}
+
+		&#anti-social-nav {
+			@include crossBrowser(transition-delay, 80ms);
+
+			.title {
+				@include crossBrowser(transition-delay, 80ms);
+			}
+
+			svg {
+				width: 2.6rem;
+
+				g g {
+					stroke: $gray;
+					fill: $gray;
+				}
+			}
+		}
+
+		&#partys-over-nav {
+			@include crossBrowser(transition-delay, 100ms);
+
+			.title {
+				@include crossBrowser(transition-delay, 100ms);
+			}
+		}
+
+		&#film-nav {
+			@include crossBrowser(transition-delay, 120ms);
+
+			.title {
+				@include crossBrowser(transition-delay, 120ms);
+			}
+
+			svg {
+				width: 2.6rem;
+			}
+		}
+
+		&.inactive {
+			svg {
+				g g {
+					stroke: $light-gray;
+				}
+			}
+
+			&#anti-social-nav {
+				svg g g {
+					fill: none;
+				}
+			}
+
+			&#film-nav {
+				g rect:nth-of-type(2){
+					fill: white;
+				}
+			}
+
+			&#preface-nav {
+				g use:nth-of-type(1){
+					fill: white;
+				}
+			}
+		}
+	}
+}
