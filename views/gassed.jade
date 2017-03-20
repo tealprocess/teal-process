@@ -29,44 +29,52 @@ block content
 					.title 
 						include ../public/img/gassed/icons/0.svg
 						| Preface
-				.text
-					| We threw a surprise birthday party for our friend, but they couldn’t make it. 
-					br
-					br
-					| We also paid the photgrapher upfront, so we didn’t know what to do with these photos.
-					br
-					br
-					| Here are the friends that did show up.
-				.characters-container
-					.characters
-						.image(data-name="Giraffe")
-							img(src="/img/gassed/characters/giraffe.png")
-						.image(data-name="Xavier")
-							img(src="/img/gassed/characters/xavier.png")
-						.image(data-name="Bear")
-							img(src="/img/gassed/characters/bear.png")
-						.image(data-name="Olivia")
-							img(src="/img/gassed/characters/olivia.png")
+				.box
+					.text
+						| We threw a surprise birthday party for our friend, but they couldn’t make it. 
+						br
+						br
+						| We also paid the photgrapher upfront, so we didn’t know what to do with these photos.
+						br
+						br
+						| Here are the friends that did show up.
+					.characters-container
+						.characters
+							.image.left
+								img(src="/img/gassed/characters/giraffe.png")
+								.name Giraffe
+							.image.center
+								img(src="/img/gassed/characters/xavier.png")
+								.name Xavier
+							.image.right
+								img(src="/img/gassed/characters/bear.png")
+								.name Bear
 
-						.image(data-name="Bella")
-							img(src="/img/gassed/characters/bella.png")
-						.image(data-name="Rafi")
-							img(src="/img/gassed/characters/rafi.png")
-						.image(data-name="Norman")
-							img(src="/img/gassed/characters/norman.png")
-						.image(data-name="Blair")
-							img(src="/img/gassed/characters/blair.png")
+							.image.left
+								img(src="/img/gassed/characters/olivia.png")
+								.name Olivia
+							.image.center
+								img(src="/img/gassed/characters/bella.png")
+								.name Bella
+							.image.right
+								img(src="/img/gassed/characters/rafi.png")
+								.name Rafi
 
-						.image(data-name="Rose")
-							img(src="/img/gassed/characters/rose.png")
-						.image(data-name="Rose").empty
-							img(src="/img/gassed/characters/rose.png")
+							.image.left
+								img(src="/img/gassed/characters/norman.png")
+								.name Norman
+							.image.center
+								img(src="/img/gassed/characters/blair.png")
+								.name Blair
+							.image.right
+								img(src="/img/gassed/characters/rose.png")
+								.name Rose
 
-				.text.sans-border
-					| We don't remember anyone else's name, but we recorded the party.
-					br
-					.sounds
-						.line
+					.text
+						| We don't remember anyone else's name, but we recorded the party.
+						br
+						.sounds
+							.line
 
 	.full-width-cont
 		.container#getting-ready
