@@ -70,11 +70,22 @@ block content
 								img(src="/img/gassed/characters/rose.png")
 								.name Rose
 
-					.text
+					.text.withSounds
 						| We don't remember anyone else's name, but we recorded the party.
 						br
 						.sounds
-							.line
+							.control
+								.play#play
+									include ../public/img/gassed/icons/play.svg
+								.pause.hide#pause
+									include ../public/img/gassed/icons/pause.svg
+							.divide
+							.player
+								#cassette
+								.info
+									.track Untitled
+									#time 00:00:00
+
 
 	.full-width-cont
 		.container#getting-ready
@@ -95,7 +106,7 @@ block content
 							img(src="/img/gassed/Getting Ready/4.png")
 					.center
 						div(style='width:58.5%; margin-bottom: 23rem;')
-							img(src="/img/gassed/Getting Ready/5.png")
+							img(src="/img/gassed/Getting Ready/5.jpg")
 					img(style='z-index: 2; width:100%;' src="/img/gassed/Getting Ready/6.png")
 					.center
 						div(style='width:49.5%; margin-bottom: 8rem; z-index: -1;').no7

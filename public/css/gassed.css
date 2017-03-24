@@ -514,6 +514,23 @@ body {
   .container .section .box .cover.left {
     margin-left: -3px; }
 
+.container#getting-ready .gradient {
+  height: 140vh;
+  width: calc(100vw + 4px);
+  margin-left: -25vw;
+  background: #954e47;
+  background: -moz-linear-gradient(top, #954e47 0%, #9d4a3d 24%, #447eb1 40%, #447eb1 100%);
+  background: -webkit-gradient(left top, left bottom, color-stop(0%, #954e47), color-stop(24%, #9d4a3d), color-stop(40%, #447eb1), color-stop(100%, #447eb1));
+  background: -webkit-linear-gradient(top, #954e47 0%, #9d4a3d 24%, #447eb1 40%, #447eb1 100%);
+  background: -o-linear-gradient(top, #954e47 0%, #9d4a3d 24%, #447eb1 40%, #447eb1 100%);
+  background: -ms-linear-gradient(top, #954e47 0%, #9d4a3d 24%, #447eb1 40%, #447eb1 100%);
+  background: linear-gradient(to bottom, #954e47 0%, #9d4a3d 24%, #447eb1 40%, #447eb1 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#954e47', endColorstr='#447eb1', GradientType=0 ); }
+
+@media (max-width: 750px) {
+  .container#getting-ready .gradient {
+    height: 122vh; } }
+
 .container.preface {
   display: flex;
   justify-content: center;
@@ -535,6 +552,8 @@ body {
     font-family: "Hoefler Text", "serif";
     font-size: 1.8rem;
     padding: 7rem 10rem 9rem 10rem; }
+    .container.preface .text.withSounds {
+      padding-bottom: 3.5rem; }
   .container.preface .characters-container {
     width: 110%;
     margin-left: -5%; }
@@ -568,37 +587,50 @@ body {
         .container.preface .characters-container .characters .image .name {
           font-size: 1.8rem;
           font-family: "Hoefler Text", "serif";
-          margin-top: 0.4rem; }
-  .container.preface .sounds .line {
-    height: 3px;
+          margin-top: 0.6rem; }
+  .container.preface .sounds {
     width: 130%;
     margin-left: -15%;
+    border-top: 3px solid #4990E2;
     margin-top: 5rem;
-    background-color: #4990E2; }
-    .container.preface .sounds .line:after {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center; }
+    .container.preface .sounds .control {
+      width: 27%;
+      left: 0;
+      display: flex;
+      justify-content: center;
+      padding-top: 1rem; }
+      .container.preface .sounds .control svg {
+        width: 3rem;
+        cursor: pointer;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -o-user-select: none;
+        user-select: none; }
+      .container.preface .sounds .control .hide {
+        display: none; }
+    .container.preface .sounds .divide {
       width: 3px;
+      align-self: flex-start;
       height: 1.4rem;
-      margin-left: 10%;
-      position: absolute;
-      content: "";
       background-color: #4990E2; }
-
-.container#getting-ready .gradient {
-  height: 140vh;
-  width: calc(100vw + 4px);
-  margin-left: -25vw;
-  background: #954e47;
-  background: -moz-linear-gradient(top, #954e47 0%, #9d4a3d 24%, #447eb1 40%, #447eb1 100%);
-  background: -webkit-gradient(left top, left bottom, color-stop(0%, #954e47), color-stop(24%, #9d4a3d), color-stop(40%, #447eb1), color-stop(100%, #447eb1));
-  background: -webkit-linear-gradient(top, #954e47 0%, #9d4a3d 24%, #447eb1 40%, #447eb1 100%);
-  background: -o-linear-gradient(top, #954e47 0%, #9d4a3d 24%, #447eb1 40%, #447eb1 100%);
-  background: -ms-linear-gradient(top, #954e47 0%, #9d4a3d 24%, #447eb1 40%, #447eb1 100%);
-  background: linear-gradient(to bottom, #954e47 0%, #9d4a3d 24%, #447eb1 40%, #447eb1 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#954e47', endColorstr='#447eb1', GradientType=0 ); }
-
-@media (max-width: 750px) {
-  .container#getting-ready .gradient {
-    height: 122vh; } }
+    .container.preface .sounds .player {
+      width: 69%;
+      right: 0;
+      padding-top: 1rem;
+      display: flex;
+      justify-content: center; }
+      .container.preface .sounds .player #cassette {
+        height: 100%;
+        width: 10rem; }
+      .container.preface .sounds .player .track {
+        font-family: "Georgia", serif;
+        margin-top: 0.6rem; }
+      .container.preface .sounds .player #time {
+        font-family: "DIN Condensed", serif; }
 
 .footer {
   display: flex;
