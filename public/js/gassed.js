@@ -119,6 +119,62 @@ function indexOfMax(arr) {
     return maxIndex;
 }
 
+// used to display time while sounds are playing
+class soundTimer {
+	constructor(id){
+		this.elId = id;
+		this.started = false;
+		this.offset = 0;
+	}
+
+	get hasStarted(){
+		return this.started;
+	}
+
+	pauseTimer(){
+		this.offset = this.diff;
+		clearInterval(this.timerId);
+	}
+
+	continueTimer(){
+		this.start = Date.now();
+		this.timerId = setInterval((function(){ this.update() }).bind(this), 1000);
+	}
+
+	startTimer(){
+		this.started = true;
+		this.start = Date.now();
+
+		this.update();
+		this.timerId = setInterval((function(){ this.update() }).bind(this), 1000);
+	}
+
+	update(){
+
+		// get the number of seconds that have elapsed since 
+        // startTimer() was called
+
+        this.diff = ((Date.now() - this.start) / 1000) | 0;
+        this.diff += this.offset;
+
+        // does the same job as parseInt truncates the float
+        let minutes = (this.diff / 60) | 0;
+        let seconds = (this.diff % 60) | 0;
+
+        minutes = minutes < 10 ? "0" + minutes : minutes;
+        seconds = seconds < 10 ? "0" + seconds : seconds;
+
+        $(this.elId).text("00:" + minutes + ":" + seconds);
+
+        // if (this.diff <= 0) {
+        //     // add one second so that the count down starts at the full duration
+        //     // example 05:00 not 04:59
+        //     this.start = Date.now() + 1000;
+        // }
+	}
+}
+
+
 function setCassetteAnimation(){
     var cassetteAnimation = {"v":"4.5.9","fr":29.9700012207031,"ip":0,"op":120.0000048877,"w":1080,"h":690,"ddd":0,"assets":[{"id":"image_0","w":96,"h":83,"u":"img/gassed/anim/","p":"c_0.png"},{"id":"image_1","w":96,"h":83,"u":"img/gassed/anim/","p":"c_1.png"},{"id":"image_2","w":831,"h":464,"u":"img/gassed/anim/","p":"c_2.png"}],"layers":[{"ddd":0,"ind":0,"ty":2,"nm":"Right Runner","refId":"image_0","ks":{"o":{"a":0,"k":100},"r":{"a":1,"k":[{"i":{"x":[0.833],"y":[0.833]},"o":{"x":[0.167],"y":[0.167]},"n":["0p833_0p833_0p167_0p167"],"t":0,"s":[0],"e":[-1080]},{"t":120.0000048877}]},"p":{"a":0,"k":[664.532,305.195,0]},"a":{"a":0,"k":[47.719,47.378,0]},"s":{"a":0,"k":[110,110,100]}},"ao":0,"ip":0,"op":905.000036861406,"st":0,"bm":0,"sr":1},{"ddd":0,"ind":1,"ty":2,"nm":"Left Runner","refId":"image_1","ks":{"o":{"a":0,"k":100},"r":{"a":1,"k":[{"i":{"x":[0.833],"y":[0.833]},"o":{"x":[0.167],"y":[0.167]},"n":["0p833_0p833_0p167_0p167"],"t":0,"s":[0],"e":[-1440]},{"t":120.0000048877}]},"p":{"a":0,"k":[419.144,305.195,0]},"a":{"a":0,"k":[47.969,46.878,0]},"s":{"a":0,"k":[110,110,100]}},"ao":0,"ip":0,"op":905.000036861406,"st":0,"bm":0,"sr":1},{"ddd":0,"ind":2,"ty":2,"nm":"Body","refId":"image_2","ks":{"o":{"a":0,"k":100},"r":{"a":0,"k":0},"p":{"a":0,"k":[543,351.465,0]},"a":{"a":0,"k":[415.195,231.931,0]},"s":{"a":0,"k":[100,100,100]}},"ao":0,"ip":0,"op":905.000036861406,"st":0,"bm":0,"sr":1}]};
     var params = {
@@ -132,16 +188,26 @@ function setCassetteAnimation(){
     var anim;
     anim = bodymovin.loadAnimation(params);
 
+    let timer = new soundTimer('#time');
+
     $('#play').click(function(){
     	anim.play();
     	$('#play').addClass('hide');
     	$('#pause').removeClass('hide');
+
+    	if(timer.hasStarted){
+    		timer.continueTimer();
+    	} else {
+    		timer.startTimer();
+    	}
     });
 
     $('#pause').click(function(){
     	anim.pause();
     	$('#play').removeClass('hide');
     	$('#pause').addClass('hide');
+
+    	timer.pauseTimer();
     });
 
     // start timer
@@ -153,7 +219,11 @@ function setCassetteAnimation(){
     	// offset current diff with pauseDiff
     	// 
 
+
+
 }
+
+
 
 function startTime(duration, display) {
     var start = Date.now(),
