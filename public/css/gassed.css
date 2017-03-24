@@ -129,7 +129,8 @@ body {
 .hero {
   height: 110vh;
   background-image: url("/img/gassed/hero.jpg");
-  background-size: 100%;
+  background-size: cover;
+  background-position: 50% 42px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -164,6 +165,10 @@ body {
     background: -ms-linear-gradient(top, rgba(237, 237, 237, 0) 0%, white 100%);
     background: linear-gradient(to bottom, rgba(237, 237, 237, 0) 0%, white 100%);
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ededed', endColorstr='#ffffff', GradientType=0 ); }
+
+@media (min-width: 1100px) {
+  .hero {
+    background-position: 50% -33px; } }
 
 .gassed-nav {
   position: fixed;

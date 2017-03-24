@@ -2,6 +2,7 @@ var request = require('request');
 var logfmt = require('logfmt');
 var bodyParser = require('body-parser');
 var redirect = require('express-redirect');
+var compression = require('compression');
 
 module.exports = function(app){
 	redirect(app); // just mounting the redirect plugin
@@ -16,6 +17,8 @@ module.exports = function(app){
 	app.use(bodyParser.urlencoded({
 	  extended: true
 	}));
+
+	app.use(compression());
 
 	// setup static routes
 	app.use("/public", app.express.static(__dirname + '/../public'));
