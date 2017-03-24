@@ -60,6 +60,7 @@
 	}
 
 	&#crew-wave {
+		margin-bottom: 20%;
 		@include box-border($orange);
 
 		.title {
@@ -69,6 +70,8 @@
 		}
 
 		@media (max-width: 750px) {
+			margin-bottom: 0%;
+
 			.title {
 				svg {
 					margin-left: -0.2rem;
