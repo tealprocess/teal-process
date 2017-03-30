@@ -124,6 +124,7 @@
 	}
 
 	&#partys-over {
+		margin-bottom: 15%;
 		@include box-border($red);
 
 		.title {
@@ -227,6 +228,10 @@
 					img {
 						height: auto;
 						width: 100%;
+
+						&.shadow {
+							box-shadow: 0 2px 4px rgba(0,0,0,0.5);
+						}
 					}
 				}
 			}
