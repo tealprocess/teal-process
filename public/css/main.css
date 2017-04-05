@@ -11,6 +11,9 @@
   font-weight: normal;
   font-style: normal; }
 
+body, html {
+  height: 100%; }
+
 html {
   font-size: 10px; }
 
@@ -35,3 +38,12 @@ html {
 @media all and (max-width: 320px) {
   html {
     font-size: 6.7px; } }
+
+.four-oh-four {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+  .four-oh-four img {
+    width: 100%; }
