@@ -24,6 +24,27 @@ html {
 	font-size: 10px;
 }
 
+@media (max-width: 1500px) and (min-width: 1300px) {
+	.container {
+		width: 60%;
+	}
+}
+
+@media (max-width: 1299px) and (min-width: 750px) {
+	.container {
+		width: 50%;
+	}
+}
+
+@media (min-width: 550px) {
+	.container.preface {
+		max-width: 460px;
+
+		.six.columns {
+			width: 100%;
+		}
+	}
+}
 
 @media all and (max-width: 500px) {
 	html {

@@ -1,4 +1,4 @@
-
+let manualScrollTo = 0;
 $(document).ready(function(){
 	// blue, green, orange, red
 	let colorList = ['#4990E2', '#9BC8A2', '#FAC990', '#ED7474'];
@@ -29,36 +29,57 @@ $(document).ready(function(){
 
 		let index = indexOfMax(percents);
 		let id = sectionIds[index];
+		let container = '.inner-container';
 
 		$('.nav-container a').addClass('inactive');
 		$(id+'-nav').removeClass('inactive');
 
 		// show nav one first scroll
 		if(!navFirstShown && id != '#preface') {
-			$('.nav-container').addClass('unhide');
+			$(container).addClass('unhide');
 			navFirstShown = true;
 		}
 
 		// hide and show nav based on preface section scroll point
 		let abovePreface = ($(window).scrollTop() < ($('#preface').offset().top - 90));
 		if(navFirstShown && !hiddenNav && abovePreface){
-			$('.nav-container').removeClass('unhide');
+			$(container).removeClass('unhide');
 			hiddenNav = true;
 		} else if (navFirstShown && hiddenNav && !abovePreface) {
-			$('.nav-container').addClass('unhide');
+			$(container).addClass('unhide');
 			hiddenNav = false;
 		}
+
+		// manage mobile nav
+		checkScrollForNav();
 		
 
 	}, 12));
 
+
+	// set click for hero mouse
+	$('#mouse').click(function(){
+		$('html,body').animate({
+			scrollTop: $('#preface').offset().top - 80
+		},'slow');
+	});
 
 	// set navigation scrolling
 	$('.nav-container a').each(function(){
 		$(this).click(function(e){
 			e.preventDefault();
 			let href = $(this).attr('href');
-			$('html,body').animate({scrollTop: $(href).offset().top - 80},'slow');
+
+			let scrollTo = $(href).offset().top + 80;
+			if(href == '#preface'){
+				scrollTo = $(href).offset().top - 80;
+			}
+
+			$('html,body').animate({
+				scrollTop: scrollTo
+			},'slow');
+
+			manualScrollTo = scrollTo;
 		});
 	});
 
@@ -77,6 +98,36 @@ $(document).ready(function(){
 	});
 
 });
+
+let lastScrollPoint = 0;
+function checkScrollForNav(){
+	let scrollPoint = $(window).scrollTop();
+	let delta = 5;
+
+	// don't do anything if scroll distance too small or we're manually scrolling
+	if((manualScrollTo != 0) || (Math.abs(lastScrollPoint - scrollPoint) <= delta))  {
+		if(Math.abs(scrollPoint - manualScrollTo) < 1){
+			// reached destination
+			manualScrollTo = 0;
+		}
+
+		return;
+	}
+
+	if ((scrollPoint > lastScrollPoint) || (scrollPoint < ($('#preface').offset().top - 90))) {
+		// Scroll Down
+		$('.gassed-nav').addClass('mobile-hide');
+	} else {
+		// Scroll Up
+		if (scrollPoint + $(window).height() < $(document).height()) {
+			$('.gassed-nav').removeClass('mobile-hide');
+		}
+	}
+
+	lastScrollPoint = scrollPoint;
+}
+
+
 
 function percentOfView(tag) {
 	
@@ -131,22 +182,35 @@ class soundTimer {
 		return this.started;
 	}
 
+	get isPlaying(){
+		return this.playing;
+	}
+
 	pauseTimer(){
+		this.playing = false;
 		this.offset = this.diff;
 		clearInterval(this.timerId);
 	}
 
 	continueTimer(){
+		this.playing = true;
 		this.start = Date.now();
 		this.timerId = setInterval((function(){ this.update() }).bind(this), 1000);
 	}
 
 	startTimer(){
+		$(this.elId).text("00:00:00");
+		this.playing = true;
 		this.started = true;
 		this.start = Date.now();
 
 		this.update();
 		this.timerId = setInterval((function(){ this.update() }).bind(this), 1000);
+	}
+
+	resetTimer(){
+		this.playing = false;
+		this.offset = 0;
 	}
 
 	update(){
@@ -185,74 +249,60 @@ function setCassetteAnimation(){
         animationData: cassetteAnimation
     };
 
-    var anim;
-    anim = bodymovin.loadAnimation(params);
-
+    let anim = bodymovin.loadAnimation(params);
     let timer = new soundTimer('#time');
 
-    $('#play').click(function(){
-    	anim.play();
-    	$('#play').addClass('hide');
-    	$('#pause').removeClass('hide');
-
-    	if(timer.hasStarted){
-    		timer.continueTimer();
+    $('#play, #pause, .sound-control').click(function(){
+    	if(timer.isPlaying){
+    		pauseSounds(anim, timer);
     	} else {
-    		timer.startTimer();
+    		playSounds(anim, timer);
     	}
     });
-
-    $('#pause').click(function(){
-    	anim.pause();
-    	$('#play').removeClass('hide');
-    	$('#pause').addClass('hide');
-
-    	timer.pauseTimer();
-    });
-
-    // start timer
-    // when pause is clicked:
-    	// take current diff and save it
-    	// start another pauseDiff 
-    	// cancel setInterval timer
-    // when play is clicked:
-    	// offset current diff with pauseDiff
-    	// 
-
-
-
 }
 
+function playSounds(anim, timer){
+	document.getElementById('gu-untitled').play();
+	anim.play();
 
+	$('#play').addClass('hide');
+	$('#pause').removeClass('hide');
 
-function startTime(duration, display) {
-    var start = Date.now(),
-        diff,
-        minutes,
-        seconds;
-    function timer() {
-        // get the number of seconds that have elapsed since 
-        // startTimer() was called
-        diff = duration - (((Date.now() - start) / 1000) | 0);
+	$('#nav-play').addClass('hide');
+	$('#nav-pause').removeClass('hide');
+	$('#nav-sound-title').text('Pause');
 
-        // does the same job as parseInt truncates the float
-        minutes = (diff / 60) | 0;
-        seconds = (diff % 60) | 0;
+	if(timer.hasStarted){
+		timer.continueTimer();
+	} else {
+		timer.startTimer();
 
-        minutes = minutes < 10 ? "0" + minutes : minutes;
-        seconds = seconds < 10 ? "0" + seconds : seconds;
+		$('#gu-untitled').on('ended', function(){
+			pauseSounds(anim, timer);
+			document.getElementById('gu-untitled').currentTime = 0;
+			timer.resetTimer();
+		});
 
-        display.textContent = minutes + ":" + seconds; 
+		$('.video-js').click(function(){
+			if(timer.isPlaying){
+				pauseSounds(anim, timer);
+			}
+		});
+	}
+}
 
-        if (diff <= 0) {
-            // add one second so that the count down starts at the full duration
-            // example 05:00 not 04:59
-            start = Date.now() + 1000;
-        }
-    };
-    // we don't want to wait a full second before the timer starts
-    timer();
-    setInterval(timer, 1000);
+function pauseSounds(anim, timer){
+	document.getElementById('gu-untitled').pause();
+	anim.pause();
+
+    $('#play').removeClass('hide');
+	$('#pause').addClass('hide');
+
+	$('#nav-play').removeClass('hide');
+	$('#nav-pause').addClass('hide');
+	$('#nav-sound-title').text('Play');
+
+	timer.pauseTimer();
 }
 
 

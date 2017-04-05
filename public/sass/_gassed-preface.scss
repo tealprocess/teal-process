@@ -146,6 +146,20 @@
 				#time {
 					font-family: "DIN Condensed", serif;
 				}
+
+				audio {
+					visibility: hidden;
+				}
+			}
+		}
+	}
+}
+
+@media (max-width: 930px) {
+	.container.preface .characters-container {
+		.characters {
+			.image {
+				width: calc(100% * (1/3) - 30px - 1px);
 			}
 		}
 	}

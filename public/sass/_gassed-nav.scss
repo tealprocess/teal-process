@@ -19,22 +19,21 @@ $light-gray: #cacaca;
 	height: 100%;
 	display: flex;
 	align-items: center;
-	
+	justify-content: center;
 
-	.nav-container {
-		padding: 0;
-		padding-left: 2.5rem;
-		position: relative;
+	.inner-container {
+		display: flex;
+		flex-direction: column;
 
 		&:hover {
-			a .title {
+			.title {
 				@include crossBrowser(transform, translate(0, 0));
 				opacity: 1;
 			}
 		}
 
 		&.hide {
-			a {
+			a, .divet, .sound-control .icon, .sound-control {
 				@include crossBrowser(transform, translate(-20px, 0));
 				opacity: 0;
 				pointer-events: none;
@@ -43,13 +42,86 @@ $light-gray: #cacaca;
 		}
 
 		&.unhide {
-			a {
+			a, .divet, .sound-control .icon, .sound-control {
 				@include crossBrowser(transform, translate(0, 0));
 				opacity: 1;
 				pointer-events: all;
 			}
 		}
 	}
+
+
+	.sound-control {
+		padding: 0;
+		padding-left: 2.5rem;
+		position: relative;
+		align-self: flex-start;
+		cursor: pointer;
+
+		display: flex;
+		align-items: center;
+		@include crossBrowser(transition-delay, 0ms);
+
+		.icon {
+			width: 3.5rem;
+			height: 2rem;
+			
+			&.hide {
+				display: none;
+			}
+
+			svg {
+				position: absolute;
+				clip: rect(0, 30px, 22px, 0);
+
+				polygon, rect {
+					fill: $gray;
+				}
+			}
+		}
+
+		&:hover {
+			svg polygon, svg rect {
+				fill: black;
+			}
+		}
+
+		.title {
+			font-family: 'Hoefler Text', sans-serif;
+			font-size: 1.5rem;
+			margin-left: 1rem;
+			margin-bottom: -0.4rem;
+			@include crossBrowser(user-select, none);
+
+			@include crossBrowser(transform, translate(-10px, 0));
+			opacity: 0;
+			@include crossBrowserTwoArgs(transition, transform 150ms ease-in-out, opacity 150ms ease-in-out);
+			@include crossBrowser(transition-delay, 0ms);
+		}
+
+	}
+
+	.divet {
+		align-self: flex-start;
+		margin-left: 3.6rem;
+		margin-top: 2rem;
+		margin-bottom: 0.6rem;
+
+		width: 1.2rem;
+		height: 1.2px;
+		background-color: rgba(0,0,0,0.2);
+
+		@include crossBrowser(transition-delay, 20ms);
+	}
+	
+
+	.nav-container {
+		padding: 0;
+		padding-left: 2.5rem;
+		position: relative;
+	}
+
+
 
 	/* reset svg color on hover */
 	#preface-nav:hover {
@@ -167,10 +239,10 @@ $light-gray: #cacaca;
 		}
 
 		&#preface-nav {
-			@include crossBrowser(transition-delay, 0ms);
+			@include crossBrowser(transition-delay, 40ms);
 
 			.title {
-				@include crossBrowser(transition-delay, 0ms);
+				@include crossBrowser(transition-delay, 40ms);
 			}
 
 			svg {
@@ -179,10 +251,10 @@ $light-gray: #cacaca;
 		}
 
 		&#getting-ready-nav {
-			@include crossBrowser(transition-delay, 20ms);
+			@include crossBrowser(transition-delay, 60ms);
 
 			.title {
-				@include crossBrowser(transition-delay, 20ms);
+				@include crossBrowser(transition-delay, 60ms);
 			}
 
 			svg {
@@ -191,27 +263,27 @@ $light-gray: #cacaca;
 		}
 
 		&#crew-wave-nav {
-			@include crossBrowser(transition-delay, 40ms);
+			@include crossBrowser(transition-delay, 80ms);
 
 			.title {
-				@include crossBrowser(transition-delay, 40ms);
+				@include crossBrowser(transition-delay, 80ms);
 			}
 		}
 
 		&#socializing-nav {
 
-			@include crossBrowser(transition-delay, 60ms);
+			@include crossBrowser(transition-delay, 100ms);
 
 			.title {
-				@include crossBrowser(transition-delay, 60ms);
+				@include crossBrowser(transition-delay, 100ms);
 			}
 		}
 
 		&#anti-social-nav {
-			@include crossBrowser(transition-delay, 80ms);
+			@include crossBrowser(transition-delay, 120ms);
 
 			.title {
-				@include crossBrowser(transition-delay, 80ms);
+				@include crossBrowser(transition-delay, 120ms);
 			}
 
 			svg {
@@ -225,18 +297,18 @@ $light-gray: #cacaca;
 		}
 
 		&#partys-over-nav {
-			@include crossBrowser(transition-delay, 100ms);
+			@include crossBrowser(transition-delay, 140ms);
 
 			.title {
-				@include crossBrowser(transition-delay, 100ms);
+				@include crossBrowser(transition-delay, 140ms);
 			}
 		}
 
 		&#film-nav {
-			@include crossBrowser(transition-delay, 120ms);
+			@include crossBrowser(transition-delay, 160ms);
 
 			.title {
-				@include crossBrowser(transition-delay, 120ms);
+				@include crossBrowser(transition-delay, 160ms);
 			}
 
 			svg {
@@ -276,16 +348,73 @@ $light-gray: #cacaca;
 	.gassed-nav {
 		width: 100%;
 		height: auto;
+		z-index: 3;
+		background: white;
+		box-shadow: 0 2px 4px rgba(0,0,0,0.13);
+		-webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+		padding: 0.5rem;
+		display: flex;
+		@include crossBrowser(transition, all 250ms ease-out);
 
-		.nav-container {
-			width: 100%;
-			padding: 2rem 1rem 2rem 1rem;
-			display: flex;
+		&.mobile-hide {
+			@include crossBrowser(transform, translate(0, -110%));
+		}
+
+		.inner-container {
+			flex-direction: row;
 			justify-content: space-between;
+			width: 100%;
 
-			a {
+			// undo transforms set for desktop nav
+			&.hide {
+				a, .divet, .sound-control .icon, .sound-control {
+					@include crossBrowser(transform, translate(0, 0));
+					opacity: 1;
+					pointer-events: all;
+				}
+			}
+
+			.sound-control {
+				padding-left: 1.5rem;
+				padding-right: 2rem;
+				padding-top: 1.5rem;
+
+				.icon {
+					height: initial;
+
+					svg {
+						position: initial;
+						clip: initial;
+
+						polygon, rect {
+							fill: black !important;
+						}
+					}
+				}
+
 				.title {
 					display: none;
+				}
+			}
+
+			.divet {
+				height: 1.5rem;
+				width: 2px;
+				margin-left: 0.5rem;
+			}
+
+
+			.nav-container {
+				width: 80%;
+				display: flex;
+				justify-content: space-between;
+				padding-left: 2.5rem;
+				padding-right: 2.5rem;
+
+				a {
+					.title {
+						display: none;
+					}
 				}
 			}
 		}
