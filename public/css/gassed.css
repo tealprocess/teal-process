@@ -68,7 +68,8 @@ body {
     background: none; }
 
 .video-js:hover .vjs-big-play-button {
-  font-size: 9em; }
+  font-size: 9em;
+  opacity: 1; }
 
 .video-js .vjs-tech {
   width: 102%;
@@ -818,8 +819,10 @@ body {
 
 .footer {
   display: flex;
+  flex-direction: column;
   justify-content: center;
-  margin-bottom: 5rem; }
+  margin-bottom: 5rem;
+  width: max-content; }
   .footer .info {
     display: flex;
     justify-content: center;
@@ -840,33 +843,44 @@ body {
         font-style: italic;
         font-weight: normal;
         margin-right: 0.3rem; }
-  .footer .credits {
-    font-family: 'Georgia', serif;
-    font-size: 1.6rem;
-    margin-bottom: 2rem; }
-    .footer .credits span {
-      text-transform: uppercase;
-      font-size: 1.1rem; }
-    .footer .credits a {
-      color: black;
-      text-decoration: none;
-      padding-bottom: 1px;
-      border-bottom: 2px solid rgba(0, 0, 0, 0.1);
-      cursor: pointer; }
-  .footer .fine-print {
+  .footer .flex-container {
     display: flex;
-    justify-content: space-between;
-    font-family: 'Georgia', serif; }
-    .footer .fine-print .logos img {
-      height: 1.7rem;
-      margin-right: 1.5rem; }
-    .footer .fine-print .date {
-      font-size: 1.2rem; }
-    .footer .fine-print .copyright .text {
-      font-size: 0.6rem;
-      float: left;
-      text-align: right; }
-    .footer .fine-print .copyright img {
-      height: 1.8rem;
-      float: right;
-      margin-left: 0.8rem; }
+    flex-direction: column; }
+    .footer .flex-container .credits {
+      font-family: 'Georgia', serif;
+      font-size: 1.6rem;
+      margin-bottom: 2rem;
+      display: flex;
+      flex-direction: row; }
+      .footer .flex-container .credits .one {
+        margin-right: 0.5rem; }
+      .footer .flex-container .credits span {
+        text-transform: uppercase;
+        font-size: 1.1rem; }
+      .footer .flex-container .credits a {
+        color: black;
+        text-decoration: none;
+        padding-bottom: 1px;
+        border-bottom: 2px solid rgba(0, 0, 0, 0.1);
+        cursor: pointer; }
+    .footer .flex-container .fine-print {
+      display: flex;
+      justify-content: space-between;
+      font-family: 'Georgia', serif; }
+      .footer .flex-container .fine-print .logos img {
+        height: 1.7rem;
+        margin-right: 1.5rem; }
+      .footer .flex-container .fine-print .date {
+        font-size: 1.2rem; }
+      .footer .flex-container .fine-print .copyright .text {
+        font-size: 0.6rem;
+        float: left;
+        text-align: right; }
+      .footer .flex-container .fine-print .copyright img {
+        height: 1.8rem;
+        float: right;
+        margin-left: 0.8rem; }
+
+@media (max-width: 640px) {
+  .footer .flex-container .credits {
+    flex-direction: column; } }

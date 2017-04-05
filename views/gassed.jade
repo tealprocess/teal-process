@@ -3,6 +3,11 @@ extends layout
 block title 
 	| Gassed Up
 
+block meta
+	meta(property='og:title' content='A Gassed Up Party')
+	meta(property='og:description' content='Collection brought to you by Teal Process & Company.')
+	meta(property='og:image' content='https://teal-process.herokuapp.com/img/gassed/gassed-og.png')
+
 block localcss
 	link(rel='stylesheet' type='text/css' href='https://vjs.zencdn.net/5-unsafe/video-js.css')
 	link(rel='stylesheet' type='text/css' href='css/gassed.css')
@@ -219,14 +224,17 @@ block content
 							</video>
 
 		.container.footer
-			.nine.columns
-				.info
-					img(src='/img/footer/teal-emblem.png')
-					.main
-						.title Gassed Up Collection
-						.signature #[span by] Teal Process & Company
+			.info
+				img(src='/img/footer/teal-emblem.png')
+				.main
+					.title Gassed Up Collection
+					.signature #[span by] Teal Process & Company
+			.flex-container
 				.credits
-					#[span Art Direction &nbsp;Photography &nbsp;Design] #[a(href='') Christian], #[a(href='http://ohagan.co') Matt] #[span Videography] #[a(href='') Ben] #[span Featuring] #[a(href='') Bailey], #[a(href='') Karis]
+					.one
+						#[span Art Direction &nbsp;Photography &nbsp;Design] #[a(href='') Christian], #[a(href='http://ohagan.co') Matt] 
+					.two
+						#[span Videography] #[a(href='') Ben] #[span Featuring] #[a(href='') Bailey], #[a(href='') Karis]
 				.fine-print
 					.logos 
 						img(src='/img/footer/teal-logo.png')
