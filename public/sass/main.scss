@@ -48,6 +48,12 @@ html {
 	}
 }
 
+@media all and (max-width: 1200px) {
+	html {
+		font-size: 8.5px;
+	}
+}
+
 @media all and (max-width: 500px) {
 	html {
 		font-size: 8.2px;
