@@ -655,6 +655,8 @@ body {
 
 .container#getting-ready .gradient {
   height: 140vh;
+  width: -webkit-calc(100vw + 4px);
+  width: -moz-calc(100vw + 4px);
   width: calc(100vw + 4px);
   margin-left: -25vw;
   padding-bottom: 5vh;
@@ -680,6 +682,8 @@ body {
   margin-top: 10%;
   height: 120vh;
   display: flex;
+  width: -webkit-calc(100vw + 4px);
+  width: -moz-calc(100vw + 4px);
   width: calc(100vw + 4px);
   margin-left: -25vw;
   background: #d27e34;
@@ -696,6 +700,8 @@ body {
   margin-top: 10%;
   display: flex;
   height: 120vh;
+  width: -webkit-calc(100vw + 4px);
+  width: -moz-calc(100vw + 4px);
   width: calc(100vw + 4px);
   margin-left: -25vw;
   background: #1a262a;

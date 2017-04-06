@@ -1,11 +1,11 @@
 let manualScrollTo = 0;
+let navFirstShown = false;
+
 $(document).ready(function(){
 	// blue, green, orange, red
 	let colorList = ['#4990E2', '#9BC8A2', '#FAC990', '#ED7474'];
 	let sectionIds = ['#preface', '#getting-ready', '#crew-wave', '#socializing', '#anti-social', '#partys-over', '#film'];
 	let hiddenNav = false;
-	let navFirstShown = false;
-
 
 	// some set up
 	startMouseAnimation();
@@ -105,8 +105,8 @@ function checkScrollForNav(){
 	let scrollPoint = $(window).scrollTop();
 	let delta = 5;
 
-	console.log(scrollPoint, lastScrollPoint);
-	console.log(manualScrollTo);
+	//console.log(scrollPoint, lastScrollPoint);
+	//console.log(manualScrollTo);
 
 	// don't do anything if scroll distance too small or we're manually scrolling
 	if((manualScrollTo != 0) || (Math.abs(lastScrollPoint - scrollPoint) <= delta))  {
@@ -266,6 +266,12 @@ function setCassetteAnimation(){
     let timer = new soundTimer('#time');
 
     $('#play, #pause, .sound-control').click(function(){
+    	// show when they click play so they don't get stuck at the top
+    	if(!navFirstShown) {
+			$('.inner-container').addClass('unhide');
+			navFirstShown = true;
+		}
+
     	if(timer.isPlaying){
     		pauseSounds(anim, timer);
     	} else {
@@ -362,6 +368,14 @@ function createVideo(){
 
 // centering the graidents
 function centerGradient(tag){
+	let currentWidth = $(tag).width();
+	let screenWidth = $(window).width();
+	let targetWidth = screenWidth + 4;
+	console.log(currentWidth - targetWidth);
+	if(currentWidth < targetWidth){
+		$(tag).width(targetWidth)
+	}
+
 	let parentBox = $(tag).parent();
 	let left = parentBox.offset().left + 4;
 	$(tag).css('margin-left', '-' + left + 'px');
