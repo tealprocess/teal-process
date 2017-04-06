@@ -1,17 +1,17 @@
 extends layout
 
-block title 
+block title
 	| Gassed Up
 
 block meta
 	meta(property='og:title' content='A Gassed Up Party')
 	meta(property='og:description' content='Collection brought to you by Teal Process & Company.')
-	meta(property='og:image' content='https://teal-process.herokuapp.com/img/gassed/gassed-og.png')
+	meta(property='og:image' content='https://tealprocess.com/img/gassed/gassed-og.png')
 	
 	meta(name='twitter:card' content='summary_large_image')
 	meta(name='twitter:title' content='A Gassed Up Party')
 	meta(name='twitter:description' content='Collection brought to you by Teal Process & Company.')
-	meta(name='twitter:image' content='https://teal-process.herokuapp.com/img/gassed/gassed-og-twitter-large.png')
+	meta(name='twitter:image' content='https://tealprocess.com/img/gassed/gassed-og-twitter-large.png')
 
 block localcss
 	link(rel='stylesheet' type='text/css' href='https://vjs.zencdn.net/5-unsafe/video-js.css')
@@ -26,6 +26,7 @@ block content
 	include gassed-nav
 
 	.hero
+		img(style="display: none;" src="/img/gassed/hero.jpg" alt="")
 		.container
 			.title A Gassed Up Party
 			.time 6 HR 30 M
@@ -91,7 +92,10 @@ block content
 									include ../public/img/gassed/icons/pause.svg
 							.divide
 							.player
-								audio(id='gu-untitled' src='/audio/Untitled.wav')
+								<audio id='gu-untitled'>
+								<source src='/audio/Untitled.ogg' type='audio/ogg'>
+								<source src='/audio/Untitled.mp3' type='audio/mpeg'>
+								</audio>
 								#cassette
 								.info
 									.track Untitled
@@ -237,9 +241,9 @@ block content
 			.flex-container
 				.credits
 					.one
-						#[span Art Direction &nbsp;Photography &nbsp;Design] #[a(href='') Christian], #[a(href='http://ohagan.co') Matt] 
+						#[span Art Direction &nbsp;Photography &nbsp;Design] #[a(href='http://christianpe.com/') Christian], #[a(href='http://ohagan.co') Matt] 
 					.two
-						#[span Videography] #[a(href='') Ben] #[span Featuring] #[a(href='') Bailey], #[a(href='') Karis]
+						#[span Videography] #[a(href='https://twitter.com/91degN') Ben] #[span Featuring] #[a(href='https://twitter.com/baileythabear_') Bailey], #[a(href='https://www.instagram.com/paris.with.a.k/') Karis]
 				.fine-print
 					.logos 
 						img(src='/img/footer/teal-logo.png')

@@ -100,15 +100,28 @@ $(document).ready(function(){
 });
 
 let lastScrollPoint = 0;
+let scrollDelayTimerFlag = false;
 function checkScrollForNav(){
 	let scrollPoint = $(window).scrollTop();
 	let delta = 5;
 
+	console.log(scrollPoint, lastScrollPoint);
+	console.log(manualScrollTo);
+
 	// don't do anything if scroll distance too small or we're manually scrolling
 	if((manualScrollTo != 0) || (Math.abs(lastScrollPoint - scrollPoint) <= delta))  {
-		if(Math.abs(scrollPoint - manualScrollTo) < 1){
+		if((Math.abs(scrollPoint - manualScrollTo) < 1) && !scrollDelayTimerFlag){
+			scrollDelayTimerFlag = true;
+			
+			setTimeout(function(){
+				scrollDelayTimerFlag = false;
+				manualScrollTo = 0;
+				console.log('hit!');
+			}, 250);
+
 			// reached destination
-			manualScrollTo = 0;
+			//manualScrollTo = 0;
+
 		}
 
 		return;
