@@ -296,10 +296,18 @@ function playSounds(anim, timer){
 			timer.resetTimer();
 		});
 
-		$('.video-js').click(function(){
+		$('.video-js, .vjs-big-play-button').click(function(){
 			if(timer.isPlaying){
 				pauseSounds(anim, timer);
 			}
+		});
+
+		videojs('my_video_1').ready(function(){
+			this.on('playing', function(){
+				if(timer.isPlaying){
+					pauseSounds(anim, timer);
+				}
+			});
 		});
 	}
 }

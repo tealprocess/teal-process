@@ -678,9 +678,8 @@ body {
 
 .container#crew-wave .gradient {
   margin-top: 10%;
-  padding-top: 25%;
-  padding-bottom: 25%;
-  height: auto;
+  height: 120vh;
+  display: flex;
   width: calc(100vw + 4px);
   margin-left: -25vw;
   background: #d27e34;
@@ -690,12 +689,13 @@ body {
   background: -ms-radial-gradient(70% 17%, ellipse cover, #d27e34 0%, #5b7d96 75%);
   background: radial-gradient(ellipse at 70% 17%, #d27e34 0%, #5b7d96 75%);
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d27e34', endColorstr='#5b7d96', GradientType=1 ); }
+  .container#crew-wave .gradient .center {
+    align-items: center; }
 
 .container#anti-social .gradient {
   margin-top: 10%;
-  padding-top: 30%;
-  padding-bottom: 30%;
-  height: auto;
+  display: flex;
+  height: 120vh;
   width: calc(100vw + 4px);
   margin-left: -25vw;
   background: #1a262a;
@@ -705,6 +705,8 @@ body {
   background: -ms-linear-gradient(55deg, #1a262a 0%, #487fa5 95%, #487fa5 100%);
   background: linear-gradient(55deg, #1a262a 0%, #487fa5 95%, #487fa5 100%);
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1a262a', endColorstr='#487fa5', GradientType=1 ); }
+  .container#anti-social .gradient .center {
+    align-items: center; }
 
 @media (max-width: 750px) {
   .container .gradient .center {
