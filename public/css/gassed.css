@@ -235,7 +235,7 @@ body {
         display: none; }
       .gassed-nav .sound-control .icon svg {
         position: absolute;
-        clip: rect(0, 30px, 22px, 0); }
+        clip: rect(0, 30px, 18px, 0); }
         .gassed-nav .sound-control .icon svg polygon, .gassed-nav .sound-control .icon svg rect {
           fill: #C6C6C6; }
     .gassed-nav .sound-control:hover svg polygon, .gassed-nav .sound-control:hover svg rect {
