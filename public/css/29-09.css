@@ -1,0 +1,189 @@
+@font-face {
+  font-family: 'Hoefler Text';
+  src: url("/../fonts/Hoefler Text.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'Gotham Black';
+  src: url("/../fonts/Gotham-Black.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'Gotham Bold';
+  src: url("/../fonts/Gotham-Bold.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal; }
+
+html {
+  font-size: 16px; }
+
+body {
+  font-size: 1rem;
+  font-family: 'Hoefler Text', 'Georgia', 'serif';
+  color: #111111;
+  margin: 0; }
+
+p {
+  font-size: 1rem;
+  line-height: 1.5rem;
+  margin-bottom: 1rem; }
+
+h1 {
+  font-size: 2rem;
+  font-weight: 100;
+  line-height: 51px;
+  letter-spacing: 0.8px;
+  margin-bottom: 0.5rem;
+  margin-top: 1rem; }
+
+h2 {
+  margin-top: 3rem;
+  margin-bottom: 1rem; }
+
+h3 {
+  margin-bottom: 1rem;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 1.6px;
+  font-family: 'Gotham Bold'; }
+
+a {
+  color: #111111; }
+
+a:visited {
+  color: #111111; }
+
+a:hover {
+  color: white;
+  text-shadow: 1px 1px 0 #111111;
+  text-decoration: none; }
+
+.container {
+  margin-top: 2.5rem;
+  margin-bottom: 2.5rem; }
+
+.row--is-centered {
+  display: flex;
+  justify-content: center; }
+
+.header {
+  margin-top: 10rem;
+  font-family: 'Gotham Black';
+  letter-spacing: 1.5px;
+  font-size: 42px; }
+
+.header__right {
+  text-align: right;
+  font-size: 2rem;
+  font-family: 'Hoefler Text';
+  font-weight: bold;
+  margin-top: 3rem; }
+
+.header img {
+  max-height: 100%;
+  margin-right: 0.75rem; }
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 1rem;
+  margin-top: 9rem;
+  margin-bottom: 3rem;
+  border-top: 2px solid #111111;
+  position: relative; }
+
+.publication-logo {
+  position: absolute;
+  top: -2.6rem;
+  right: 0;
+  height: 1.5rem; }
+
+.teal-logo {
+  height: 1rem; }
+
+.post {
+  margin-top: 7.5rem; }
+
+.intro {
+  color: rgba(39, 39, 39, 0.7); }
+
+.post-info {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin-bottom: 2rem; }
+
+.post-divider {
+  padding-bottom: 6px;
+  border: 1px solid #111111;
+  box-shadow: 4px 4px 0px; }
+
+.post-info-dividers {
+  border-top: 3px solid #111111;
+  border-bottom: 1px solid #111111;
+  padding-bottom: 4px; }
+
+.post-info div {
+  padding-top: 1rem; }
+
+.post-info__what {
+  font-weight: bold;
+  letter-spacing: 0.5px; }
+
+.post-info__author {
+  font-size: 16px; }
+
+.post-date {
+  font-family: 'Gotham Black';
+  font-size: 14px;
+  color: rgba(0, 0, 0, 0.3);
+  margin-right: 1rem;
+  padding-bottom: 1px;
+  letter-spacing: 1px; }
+
+.sounds {
+  position: relative;
+  display: flex;
+  align-items: center; }
+  .sounds .control {
+    display: flex;
+    justify-content: center;
+    padding: 0.7rem 1.6rem;
+    border: 2px solid #111111;
+    box-shadow: 4px 4px 0px #111111;
+    margin-right: 1.5rem;
+    width: 4rem;
+    -webkit-transition: all 200ms ease-in-out;
+    -moz-transition: all 200ms ease-in-out;
+    -o-transition: all 200ms ease-in-out;
+    transition: all 200ms ease-in-out;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 1.6px;
+    font-family: 'Gotham Bold'; }
+    .sounds .control .hide {
+      display: none; }
+    .sounds .control:hover {
+      -webkit-transform: translate(-2px, -2px);
+      -moz-transform: translate(-2px, -2px);
+      -o-transform: translate(-2px, -2px);
+      transform: translate(-2px, -2px);
+      box-shadow: 6px 6px 0px #111111;
+      cursor: pointer; }
+  .sounds .player {
+    right: 0;
+    display: flex;
+    justify-content: center;
+    border: 0; }
+    .sounds .player .track {
+      font-family: "Hoefler Text", serif;
+      margin-top: 0.6rem; }
+    .sounds .player #time {
+      font-family: "Gotham Bold", serif;
+      font-size: 12px;
+      margin-top: 0.6rem; }
+    .sounds .player audio {
+      visibility: hidden; }
