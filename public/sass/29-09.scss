@@ -136,6 +136,61 @@ a:hover {
 	height: 1rem;
 }
 
+
+.thought-dot-container {
+  height: 1rem;
+}
+
+.thought-dot {
+  height: 2px;
+  width: 2px;
+  border-radius: 100%;
+  display: inline-block;
+  background-color: #000000;
+}
+
+#thought-dot {
+  &-1 {
+    margin-right: 1px;
+    margin-bottom: 12px;
+  }
+
+  &-2 {
+    margin-right: 5px;
+    margin-bottom: 7px;
+  }
+
+  &-3 {
+    margin-right: 3px;
+    margin-bottom: 13.5px;
+  }
+
+  &-4 {
+    margin-right: 6px;
+    margin-bottom: -3px;
+  }
+
+  &-5 {
+    margin-right: 5px;
+    margin-bottom: 6px;
+  }
+
+  &-6 {
+    margin-right: 4px;
+    margin-bottom: 7px;
+  }
+
+  &-7 {
+    margin-right: 5px;
+    margin-bottom: 5px;
+  }
+
+  &-8 {
+    margin-right: 6px;
+    margin-bottom: 7px;
+  }
+}
+
 .post {
 	margin-top: 7.5rem;
 }
@@ -215,7 +270,7 @@ a:hover {
 			cursor: pointer;
 		}
 
-		
+
 	}
 
 
