@@ -27,6 +27,7 @@
 }
 
 
+$off-black: #101010;
 
 
 html {
@@ -36,7 +37,7 @@ html {
 body {
 	font-size: 1rem;
 	font-family: 'Hoefler Text', 'Georgia', 'serif';
-	color: #111111;
+	color: $off-black;
 	margin: 0;
 }
 
@@ -69,16 +70,16 @@ h3 {
 }
 
 a {
-	color: #111111;
+	color: $off-black;
 }
 
 a:visited {
-	color: #111111;
+	color: $off-black;
 }
 
 a:hover {
 	color: white;
-	text-shadow: 1px 1px 0 #111111;
+	text-shadow: 1px 1px 0 $off-black;
 	text-decoration: none;
 }
 
@@ -121,7 +122,7 @@ a:hover {
 	padding-top: 1rem;
 	margin-top: 5rem;
 	margin-bottom: 3rem;
-	border-top: 2px solid #111111;
+	border-top: 2px solid $off-black;
 	position: relative;
 }
 
@@ -134,61 +135,6 @@ a:hover {
 
 .teal-logo {
 	height: 1rem;
-}
-
-
-.thought-dot-container {
-  height: 1rem;
-}
-
-.thought-dot {
-  height: 2px;
-  width: 2px;
-  border-radius: 100%;
-  display: inline-block;
-  background-color: #000000;
-}
-
-#thought-dot {
-  &-1 {
-    margin-right: 1px;
-    margin-bottom: 12px;
-  }
-
-  &-2 {
-    margin-right: 5px;
-    margin-bottom: 7px;
-  }
-
-  &-3 {
-    margin-right: 3px;
-    margin-bottom: 13.5px;
-  }
-
-  &-4 {
-    margin-right: 6px;
-    margin-bottom: -3px;
-  }
-
-  &-5 {
-    margin-right: 5px;
-    margin-bottom: 6px;
-  }
-
-  &-6 {
-    margin-right: 4px;
-    margin-bottom: 7px;
-  }
-
-  &-7 {
-    margin-right: 5px;
-    margin-bottom: 5px;
-  }
-
-  &-8 {
-    margin-right: 6px;
-    margin-bottom: 7px;
-  }
 }
 
 .post {
@@ -208,13 +154,13 @@ a:hover {
 
 .post-divider {
 	padding-bottom: 6px;
-	border: 1px solid #111111;
+	border: 1px solid $off-black;
 	box-shadow: 4px 4px 0px;
 }
 
 .post-info-dividers {
-	border-top: 3px solid #111111;
-	border-bottom: 1px solid #111111;
+	border-top: 3px solid $off-black;
+	border-bottom: 1px solid $off-black;
 	padding-bottom: 4px;
 }
 
@@ -249,8 +195,8 @@ a:hover {
 		display: flex;
 	    justify-content: center;
 	    padding: 0.7rem 1.6rem;
-	    border: 2px solid #111111;
-	    box-shadow: 4px 4px 0px #111111;
+	    border: 2px solid $off-black;
+	    box-shadow: 4px 4px 0px $off-black;
 	    margin-right: 1.5rem;
 	    width: 4rem;
 	    @include crossBrowser(transition, all 200ms ease-in-out);
@@ -266,7 +212,7 @@ a:hover {
 
 		&:hover {
 	    	@include crossBrowser(transform, translate(-2px, -2px));
-			box-shadow: 6px 6px 0px #111111;
+			box-shadow: 6px 6px 0px $off-black;
 			cursor: pointer;
 		}
 
@@ -285,7 +231,7 @@ a:hover {
 			margin-top: 0.6rem;
 		}
 
-		#time {
+		.time {
 			font-family: "Gotham Bold", serif;
 			font-size: 12px;
 			margin-top: 0.6rem;
@@ -295,4 +241,64 @@ a:hover {
 			visibility: hidden;
 		}
 	}
+}
+
+
+
+// for Milky Way
+
+.thought-dot-container {
+  height: 1rem;
+  margin-left: 8px;
+  margin-right: 12px;
+}
+
+.thought-dot {
+  height: 2px;
+  width: 2px;
+  border-radius: 100%;
+  display: inline-block;
+  background-color: #000000;
+}
+
+#thought-dot {
+  &-1 {
+    margin-right: 1px;
+    margin-bottom: 10px;
+  }
+
+  &-2 {
+    margin-right: 8px;
+    margin-bottom: 5px;
+  }
+
+  &-3 {
+    margin-right: 4px;
+    margin-bottom: 11.5px;
+  }
+
+  &-4 {
+    margin-right: 12px;
+    margin-bottom: -5px;
+  }
+
+  &-5 {
+    margin-right: 18px;
+    margin-bottom: 4px;
+  }
+
+  &-6 {
+    margin-right: 11px;
+    margin-bottom: 5px;
+  }
+
+  &-7 {
+    margin-right: 12px;
+    margin-bottom: 3px;
+  }
+
+  &-8 {
+    margin-right: 0;
+    margin-bottom: 5px;
+  }
 }
