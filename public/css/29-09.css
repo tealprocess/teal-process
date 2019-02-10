@@ -231,3 +231,25 @@ a:hover {
 #thought-dot-8 {
   margin-right: 0;
   margin-bottom: 5px; }
+
+.scroll-sideways {
+  height: 90vh;
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  white-space: nowrap;
+  -webkit-overflow-scrolling: touch; }
+  .scroll-sideways_spacer {
+    display: inline-block;
+    height: 100%;
+    width: 400px; }
+  .scroll-sideways::-webkit-scrollbar {
+    display: none; }
+  .scroll-sideways img {
+    max-height: 100%;
+    display: inline-block; }

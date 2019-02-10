@@ -5,6 +5,12 @@ $(document).ready(function(){
 	setSoundControls();
 	createThoughtScroller();
 
+	// sideways scroller for found artifacts
+	centerFoundScroller();
+	window.addEventListener('resize', throttle(function(ev) {
+		centerFoundScroller();
+	}, 10));
+
 
 	// helper functions found on csstricks and stackoverflow
 	var mX, mY, distance,
@@ -210,8 +216,29 @@ function createThoughtScroller(){
 	new ScrollMagic.Scene({triggerElement: "#thought-scroll-start", duration: 400})
 		.setTween(tween)
 		.addTo(controller);
+}
 
-		// .addIndicators()
-		
+// centering the graidents
+function centerFoundScroller(){
+	let containerClass = '#found-container';
+	let negativeBuffer = 18;
+	let centeringMargin = $(containerClass).offset().left - negativeBuffer;
 
+	let elIds = ['found-scroll-front', 'found-scroll-back'];
+	for(let i = 0; i < elIds.length; i++){
+		$('#' + elIds[i]).css('width', centeringMargin + 'px');
+	}
+}
+
+// found online somewhere, used for resize listener
+function throttle(fn, delay) {
+	var allowSample = true;
+
+	return function(e) {
+		if (allowSample) {
+			allowSample = false;
+			setTimeout(function() { allowSample = true; }, delay);
+			fn(e);
+		}
+	};
 }

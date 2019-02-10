@@ -302,3 +302,38 @@ a:hover {
     margin-bottom: 5px;
   }
 }
+
+
+
+// for Found artifacts
+
+.scroll-sideways {
+  height: 90vh;
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+
+  overflow-x: scroll;
+  overflow-y: hidden;
+  white-space: nowrap;
+
+  -webkit-overflow-scrolling: touch;
+
+  &_spacer {
+    display: inline-block;
+    height: 100%;
+    width: 400px;
+  }
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  img {
+    max-height: 100%;
+    display: inline-block;
+  }
+}
