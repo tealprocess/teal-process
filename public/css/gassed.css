@@ -129,7 +129,7 @@ body {
 
 .hero {
   height: 110vh;
-  background-image: url("/img/gassed/hero.jpg");
+  background-image: url("../img/gassed/hero.jpg");
   background-size: cover;
   background-position: 50% 42px;
   display: flex;

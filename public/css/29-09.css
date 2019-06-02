@@ -1,18 +1,18 @@
 @font-face {
   font-family: 'Hoefler Text';
-  src: url("/../fonts/Hoefler Text.ttf") format("truetype");
+  src: url("../fonts/Hoefler Text.ttf") format("truetype");
   font-weight: normal;
   font-style: normal; }
 
 @font-face {
   font-family: 'Gotham Black';
-  src: url("/../fonts/Gotham-Black.ttf") format("truetype");
+  src: url("../fonts/Gotham-Black.ttf") format("truetype");
   font-weight: normal;
   font-style: normal; }
 
 @font-face {
   font-family: 'Gotham Bold';
-  src: url("/../fonts/Gotham-Bold.ttf") format("truetype");
+  src: url("../fonts/Gotham-Bold.ttf") format("truetype");
   font-weight: normal;
   font-style: normal; }
 

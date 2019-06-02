@@ -1,13 +1,13 @@
 @font-face {
   font-family: 'DIN Condensed';
-  src: url("/../fonts/DINCond/DINCond-Bold.eot");
-  src: url("/../fonts/DINCond/DINCond-Bold.woff2") format("woff2"), url("/../fonts/DINCond/DINCond-Bold.woff") format("woff"), url("/../fonts/DINCond/DINCond-Bold.ttf") format("truetype"), url("/../fonts/DINCond/DINCond-Bold.svg#DINCond-Bold") format("svg"), url("/../fonts/DINCond/DINCond-Bold.eot?#iefix") format("embedded-opentype");
+  src: url("../fonts/DINCond/DINCond-Bold.eot");
+  src: url("../fonts/DINCond/DINCond-Bold.woff2") format("woff2"), url("../fonts/DINCond/DINCond-Bold.woff") format("woff"), url("../fonts/DINCond/DINCond-Bold.ttf") format("truetype"), url("../fonts/DINCond/DINCond-Bold.svg#DINCond-Bold") format("svg"), url("../fonts/DINCond/DINCond-Bold.eot?#iefix") format("embedded-opentype");
   font-weight: normal;
   font-style: normal; }
 
 @font-face {
   font-family: 'Hoefler Text';
-  src: url("/../fonts/Hoefler Text.ttf") format("truetype");
+  src: url("../fonts/Hoefler Text.ttf") format("truetype");
   font-weight: normal;
   font-style: normal; }
 
