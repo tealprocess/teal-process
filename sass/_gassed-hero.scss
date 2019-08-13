@@ -1,0 +1,77 @@
+.hero {
+    height: 110vh;
+    background-image: url("../img/gassed/hero.jpg");
+    background-size: cover;
+    background-position: 50% 42px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+
+    .container {
+        margin-top: -16vh;
+    	text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+    	.title {
+            font-family: "Didot", "serif";
+            font-size: 5.5rem;
+        }
+
+        .time {
+            font-family: "DIN Condensed";
+            font-size: 2rem;
+            margin-top: 1rem;
+        }
+
+        #mouse {
+            width: 5%;
+            margin-top: 10rem;
+            cursor: pointer;
+        }
+    }
+
+    .bg-fade {
+        width: 100%;
+        height: 30%;
+        position: absolute;
+        bottom: -1%;
+        left: 0;
+
+        background: rgba(237,237,237,0);
+        background: -moz-linear-gradient(top, rgba(237,237,237,0) 0%, rgba(255,255,255,1) 100%);
+        background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(237,237,237,0)), color-stop(100%, rgba(255,255,255,1)));
+        background: -webkit-linear-gradient(top, rgba(237,237,237,0) 0%, rgba(255,255,255,1) 100%);
+        background: -o-linear-gradient(top, rgba(237,237,237,0) 0%, rgba(255,255,255,1) 100%);
+        background: -ms-linear-gradient(top, rgba(237,237,237,0) 0%, rgba(255,255,255,1) 100%);
+        background: linear-gradient(to bottom, rgba(237,237,237,0) 0%, rgba(255,255,255,1) 100%);
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ededed', endColorstr='#ffffff', GradientType=0 );
+    }
+    
+}
+
+@media (min-width: 1500px) {
+    .hero {
+        margin-bottom: 10rem;
+    }
+}
+
+@media (min-width: 1100px) {
+    .hero {
+        background-position: 50% -33px;
+    }
+}
+
+@media (max-width: 750px) {
+    .hero .container {
+        #mouse {
+            width: 11%;
+        }
+
+        .title {
+            font-size: 4.5rem;
+        }
+    }
+}
