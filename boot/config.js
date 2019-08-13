@@ -7,7 +7,7 @@ var compression = require('compression');
 module.exports = function(app){
 	redirect(app); // just mounting the redirect plugin
 	app.set('views', __dirname + '/../views');
-	app.set('view engine', 'jade');
+	app.set('view engine', 'pug');
 	app.locals.pretty = true;
 
 	// logger
