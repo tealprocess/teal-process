@@ -1,8 +1,10 @@
 import os
 
+default = "gassed"
+
 for filename in os.listdir("views"):
 	if filename.endswith(".html"):
-		new_home = "public/" + os.path.splitext(filename)[0]
+		new_home = os.path.splitext(filename)[0]
 		if not os.path.exists(new_home):
 			os.makedirs(new_home)
 		old_filename = "views/"+filename
