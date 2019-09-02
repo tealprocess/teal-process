@@ -1,0 +1,18 @@
+html {
+  background: #222222; }
+
+p.small {
+  font-family: "EB Garamond";
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 18px;
+  text-align: right; }
+
+.right__top {
+  position: fixed;
+  margin-top: 6rem;
+  margin-right: 8rem; }
+
+.right__bottom {
+  position: fixed; }

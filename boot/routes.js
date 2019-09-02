@@ -9,6 +9,10 @@ module.exports = function(app){
 		res.render('29-09');
 	});
 
+	app.get('/new-home', function(req, res) {
+		res.render('new-home');
+	});
+
 	// 404
 	// always have this route last
 	app.get('*', function(req, res){
