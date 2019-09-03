@@ -8,7 +8,7 @@
   "main": "server.js",
   "scripts": {
     "css": "node-sass sass/ -o public/css",
-    "css:watch": "npm run css && node-sass public/sass -wo public/css",
+    "css:watch": "npm run css && node-sass sass/ -wo public/css",
     "dev": "npm start & npm run css:watch",
     "build": "for filename in views; do pug ${filename} && python build.py; done"
   },
