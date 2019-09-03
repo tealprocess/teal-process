@@ -24,24 +24,35 @@ p {
 .page {
   display: flex;
   justify-content: space-between;
-  flex-direction: column;
+  flex-direction: row;
 }
 
 .right {
+  position: fixed;
   text-align: right;
-  margin-right: 8rem;
-  margin-top: 6rem;
+  max-width: 40rem;
+  right: 8rem;
+  top: 6rem;
+  bottom: 6rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 
   &__top {
-    position: fixed;
+    position: relative;
+
   }
 
   &__bottom {
-    position: fixed;
+    position: relative;
 
   }
 }
 
 .left {
   margin-left: 16rem;
+
+  .spacer-test {
+    height: 400px;
+  }
 }
