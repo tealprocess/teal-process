@@ -83,18 +83,31 @@ p {
       display: flex;
       flex-direction: row;
       justify-content: space-between;
+      align-items: baseline;
+    }
 
-      &-subtitle {
-        i {
+    &-subtitle {
+      font-size: 2.4rem;
+      line-height: 3.2rem;
+      letter-spacing: 0.02em;
+      font-weight: 500;
 
-        }
+      span {
+        font-variant-caps: small-caps;
+        -moz-font-feature-settings: "smcp";
+        -webkit-font-feature-settings: "smcp";
+        font-feature-settings: "smcp";
       }
 
-      &-nature {
-
+      i {
+        font-size: 1.6rem;
+        line-height: 3.2rem;
       }
     }
 
+    &-nature {
+      line-height: 2.8rem;
+    }
 
   }
 
@@ -103,6 +116,17 @@ p {
     padding-right: 1.6rem;
     padding-bottom: 4rem;
     padding-left: 1.6rem;
+    border-bottom: 1px solid #ffffff;
+    color: #ffffff;
+    width: 100%;
+    text-decoration: none;
+
+    &:hover {
+      background: #2B2B2B;
+      cursor: pointer;
+      color: #ffffff;
+    }
+
 
     &-num {
 

@@ -60,11 +60,35 @@ p.small {
     .shelf__header-second-line {
       display: flex;
       flex-direction: row;
-      justify-content: space-between; }
+      justify-content: space-between;
+      align-items: baseline; }
+    .shelf__header-subtitle {
+      font-size: 2.4rem;
+      line-height: 3.2rem;
+      letter-spacing: 0.02em;
+      font-weight: 500; }
+      .shelf__header-subtitle span {
+        font-variant-caps: small-caps;
+        -moz-font-feature-settings: "smcp";
+        -webkit-font-feature-settings: "smcp";
+        font-feature-settings: "smcp"; }
+      .shelf__header-subtitle i {
+        font-size: 1.6rem;
+        line-height: 3.2rem; }
+    .shelf__header-nature {
+      line-height: 2.8rem; }
   .shelf__book {
     padding-top: 4rem;
     padding-right: 1.6rem;
     padding-bottom: 4rem;
-    padding-left: 1.6rem; }
+    padding-left: 1.6rem;
+    border-bottom: 1px solid #ffffff;
+    color: #ffffff;
+    width: 100%;
+    text-decoration: none; }
+    .shelf__book:hover {
+      background: #2B2B2B;
+      cursor: pointer;
+      color: #ffffff; }
   .shelf .spacer-test {
     height: 400px; }
