@@ -1,26 +1,27 @@
 html {
   background: #222222;
-  font-family: "EB Garamond";
+  font-family: eb-garamond, serif;
   font-style: normal;
-  font-weight: normal;
+  font-weight: 400;
   font-size: 10px; }
 
 body {
   color: #ffffff;
   font-size: 16px;
-  line-height: 21px; }
+  line-height: 21px;
+  font-family: eb-garamond, serif; }
 
 p.small {
   font-size: 14px;
   line-height: 18px;
   text-align: right; }
 
-.page {
+.room {
   display: flex;
   justify-content: space-between;
   flex-direction: row; }
 
-.right {
+.inside-cover {
   position: fixed;
   text-align: right;
   max-width: 40rem;
@@ -30,12 +31,40 @@ p.small {
   display: flex;
   flex-direction: column;
   justify-content: space-between; }
-  .right__top {
+  .inside-cover__top {
     position: relative; }
-  .right__bottom {
+  .inside-cover__bottom {
     position: relative; }
 
-.left {
-  margin-left: 16rem; }
-  .left .spacer-test {
+.shelf {
+  margin-top: 45rem;
+  margin-left: 16rem;
+  width: 45rem; }
+  .shelf__header {
+    font-family: eb-garamond, serif;
+    padding-bottom: 4rem;
+    border-bottom: 1px solid #ffffff;
+    position: relative; }
+    .shelf__header:after {
+      position: absolute;
+      bottom: -5px;
+      height: 1px;
+      content: "";
+      width: 100%;
+      border-bottom: 1px solid #ffffff; }
+    .shelf__header-headline {
+      font-weight: 800;
+      font-size: 6.4rem;
+      line-height: 7.7rem;
+      letter-spacing: 0.02em; }
+    .shelf__header-second-line {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between; }
+  .shelf__book {
+    padding-top: 4rem;
+    padding-right: 1.6rem;
+    padding-bottom: 4rem;
+    padding-left: 1.6rem; }
+  .shelf .spacer-test {
     height: 400px; }

@@ -1,9 +1,11 @@
 
+// have 400 and 700 weights available for eb-garamond
+
 html {
   background: #222222;
-  font-family: "EB Garamond";
+  font-family: eb-garamond, serif;
   font-style: normal;
-  font-weight: normal;
+  font-weight: 400;
   font-size: 10px;
 }
 
@@ -11,6 +13,7 @@ body {
   color: #ffffff;
   font-size: 16px;
   line-height: 21px;
+  font-family: eb-garamond, serif;
 }
 
 p {
@@ -21,13 +24,13 @@ p {
   }
 }
 
-.page {
+.room {
   display: flex;
   justify-content: space-between;
   flex-direction: row;
 }
 
-.right {
+.inside-cover {
   position: fixed;
   text-align: right;
   max-width: 40rem;
@@ -49,8 +52,71 @@ p {
   }
 }
 
-.left {
+.shelf {
+  margin-top: 45rem;
   margin-left: 16rem;
+  width: 45rem;
+
+  &__header {
+    font-family: eb-garamond, serif;
+    padding-bottom: 4rem;
+    border-bottom: 1px solid #ffffff;
+    position: relative;
+
+    &:after {
+      position: absolute;
+      bottom: -5px;
+      height: 1px;
+      content: "";
+      width: 100%;
+      border-bottom: 1px solid #ffffff;
+    }
+
+    &-headline {
+      font-weight: 800;
+      font-size: 6.4rem;
+      line-height: 7.7rem;
+      letter-spacing: 0.02em;
+    }
+
+    &-second-line {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+
+      &-subtitle {
+        i {
+
+        }
+      }
+
+      &-nature {
+
+      }
+    }
+
+
+  }
+
+  &__book {
+    padding-top: 4rem;
+    padding-right: 1.6rem;
+    padding-bottom: 4rem;
+    padding-left: 1.6rem;
+
+    &-num {
+
+    }
+
+    &-title {
+
+    }
+
+    &-desc {
+
+    }
+
+  }
 
   .spacer-test {
     height: 400px;
