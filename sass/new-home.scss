@@ -1,32 +1,47 @@
 
 html {
   background: #222222;
+  font-family: "EB Garamond";
+  font-style: normal;
+  font-weight: normal;
+  font-size: 10px;
 }
 
 body {
   color: #ffffff;
+  font-size: 16px;
+  line-height: 21px;
 }
 
 p {
   &.small {
-    font-family: "EB Garamond";
-    font-style: normal;
-    font-weight: normal;
     font-size: 14px;
     line-height: 18px;
     text-align: right;
   }
 }
 
+.page {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+}
+
 .right {
+  text-align: right;
+  margin-right: 8rem;
+  margin-top: 6rem;
+
   &__top {
     position: fixed;
-    margin-top: 6rem;
-    margin-right: 8rem;
   }
 
   &__bottom {
     position: fixed;
 
   }
+}
+
+.left {
+  margin-left: 16rem;
 }
