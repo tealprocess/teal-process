@@ -23,6 +23,8 @@ block localscripts
 block content
   .room
     .shelf
+      .inside-cover.inside-cover--is-mobile
+        include new-home-top-bar
       .shelf__header
         .shelf__header-headline Artifacts
         .shelf__header-second-line
@@ -42,16 +44,9 @@ block content
       .spacer-test 
       .spacer-test
       .spacer-test weeeee
-    .inside-cover
-      .inside-cover__top
-        p.small heyo@tealprocess.net 
-      .inside-cover__bottom
-        p Teal is an excuse to explore ideas.
-        p.small 
-          | Initial thoughts start as a concept, are nourished into experiments, and published as online artifacts. Our current experiments include Shared Context and Language Archive. Do reach out if you’re interested in any of this, we’d love to hear from you!
-        p.small
-          span(id="footer-address") Peaks Island, ME 04108.
-          | Copyright
-          br
-          | Teal Process & Company 2019
+      .inside-cover.inside-cover--is-mobile
+        include new-home-footer
+    .inside-cover.inside-cover--is-desktop
+      include new-home-top-bar
+      include new-home-footer
   

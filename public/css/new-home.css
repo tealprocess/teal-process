@@ -13,8 +13,7 @@ body {
 
 p.small {
   font-size: 14px;
-  line-height: 18px;
-  text-align: right; }
+  line-height: 18px; }
 
 .room {
   display: flex;
@@ -31,20 +30,27 @@ p.small {
   display: flex;
   flex-direction: column;
   justify-content: space-between; }
+  .inside-cover--is-mobile {
+    display: none;
+    position: relative;
+    text-align: left;
+    right: inherit;
+    top: inherit;
+    bottom: inherit; }
   .inside-cover__top {
     position: relative; }
   .inside-cover__bottom {
     position: relative; }
 
 .shelf {
-  margin-top: 45rem;
   margin-left: 16rem;
   width: 45rem; }
   .shelf__header {
     font-family: eb-garamond, serif;
     padding-bottom: 4rem;
     border-bottom: 1px solid #ffffff;
-    position: relative; }
+    position: relative;
+    margin-top: 45rem; }
     .shelf__header:after {
       position: absolute;
       bottom: -5px;
@@ -92,3 +98,13 @@ p.small {
       color: #ffffff; }
   .shelf .spacer-test {
     height: 400px; }
+
+@media only screen and (max-width: 1300px) {
+  .shelf {
+    margin-left: 8rem; } }
+
+@media only screen and (max-width: 1100px) {
+  .inside-cover--is-desktop {
+    display: none; }
+  .inside-cover--is-mobile {
+    display: block; } }

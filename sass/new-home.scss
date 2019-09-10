@@ -20,7 +20,6 @@ p {
   &.small {
     font-size: 14px;
     line-height: 18px;
-    text-align: right;
   }
 }
 
@@ -41,6 +40,16 @@ p {
   flex-direction: column;
   justify-content: space-between;
 
+  &--is-mobile {
+    display: none;
+
+    position: relative;
+    text-align: left;
+    right: inherit;
+    top: inherit;
+    bottom: inherit;
+  }
+
   &__top {
     position: relative;
 
@@ -52,8 +61,8 @@ p {
   }
 }
 
+
 .shelf {
-  margin-top: 45rem;
   margin-left: 16rem;
   width: 45rem;
 
@@ -62,6 +71,7 @@ p {
     padding-bottom: 4rem;
     border-bottom: 1px solid #ffffff;
     position: relative;
+    margin-top: 45rem;
 
     &:after {
       position: absolute;
@@ -144,5 +154,21 @@ p {
 
   .spacer-test {
     height: 400px;
+  }
+}
+
+@media only screen and (max-width: 1300px) {
+  .shelf {
+    margin-left: 8rem;
+  }
+}
+
+@media only screen and (max-width: 1100px) {
+  .inside-cover--is-desktop {
+    display: none;
+  }
+
+  .inside-cover--is-mobile {
+    display: block;
   }
 }
