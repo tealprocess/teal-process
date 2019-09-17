@@ -10,6 +10,7 @@ html {
 }
 
 body {
+  background: #222222;
   color: #ffffff;
   font-size: 16px;
   line-height: 21px;
@@ -65,6 +66,8 @@ p {
 .shelf {
   margin-left: 16rem;
   width: 45rem;
+  display: flex;
+  flex-direction: column;
 
   &__header {
     font-family: eb-garamond, serif;
@@ -128,7 +131,7 @@ p {
     padding-left: 1.6rem;
     border-bottom: 1px solid #ffffff;
     color: #ffffff;
-    width: 100%;
+    width: auto;
     text-decoration: none;
 
     &:hover {
@@ -152,8 +155,8 @@ p {
 
   }
 
-  .spacer-test {
-    height: 400px;
+  &__spacer {
+    height: 80px;
   }
 }
 

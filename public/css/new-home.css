@@ -6,6 +6,7 @@ html {
   font-size: 10px; }
 
 body {
+  background: #222222;
   color: #ffffff;
   font-size: 16px;
   line-height: 21px;
@@ -44,7 +45,9 @@ p.small {
 
 .shelf {
   margin-left: 16rem;
-  width: 45rem; }
+  width: 45rem;
+  display: flex;
+  flex-direction: column; }
   .shelf__header {
     font-family: eb-garamond, serif;
     padding-bottom: 4rem;
@@ -90,14 +93,14 @@ p.small {
     padding-left: 1.6rem;
     border-bottom: 1px solid #ffffff;
     color: #ffffff;
-    width: 100%;
+    width: auto;
     text-decoration: none; }
     .shelf__book:hover {
       background: #2B2B2B;
       cursor: pointer;
       color: #ffffff; }
-  .shelf .spacer-test {
-    height: 400px; }
+  .shelf__spacer {
+    height: 80px; }
 
 @media only screen and (max-width: 1300px) {
   .shelf {
