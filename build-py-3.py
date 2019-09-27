@@ -1,6 +1,6 @@
 import os
 
-default = "gassed.html"
+default = "home.html"
 
 for filename in os.listdir("views"):
 	if filename.endswith(".html"):
