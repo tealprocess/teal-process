@@ -1,6 +1,4 @@
 $(document).ready(function(){
-  console.log('hello');
-
   $('#lrft-open').click(function(e){
     e.preventDefault();
     $('#shelf-header').addClass('shelf__header--show-back');
@@ -21,4 +19,9 @@ $(document).ready(function(){
     $('#book-4').removeClass('shelf__book--is-hidden');
     $('#shelf-footer').removeClass('shelf__footer--is-hidden');
   });
+
+  const growEmojis = ['🌱', '🌿', '🌳', '🌻', '🌷'];
+  const expandEmojis = ['🍂', '🌼', '🌸', '🍃']; // not in use yet, needs different expand animation
+  let rand = Math.floor(Math.random() * 9);
+  $('#nature').text(growEmojis[rand]);
 });

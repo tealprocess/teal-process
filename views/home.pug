@@ -14,17 +14,17 @@ block meta
   meta(name='twitter:image' content='')
 
 block localcss
-  link(rel='stylesheet' type='text/css' href='../css/new-home.css')
+  link(rel='stylesheet' type='text/css' href='../css/home.css')
   link(rel='stylesheet' href='https://use.typekit.net/uzx7tew.css')
 
 block localscripts
-  script(src='../js/new-home.js')
+  script(src='../js/home.js')
 
 block content
   .room
     .shelf
       .inside-cover.inside-cover--is-mobile
-        include new-home-top-bar
+        include home-top-bar
       .shelf__header#shelf-header
         .shelf__header-headline Artifacts
         .shelf__header-second-line
@@ -62,8 +62,8 @@ block content
         .shelf__footer-second-line
       .shelf__spacer 
       .inside-cover.inside-cover--is-mobile
-        include new-home-footer
+        include home-footer
     .inside-cover.inside-cover--is-desktop
-      include new-home-top-bar
-      include new-home-footer
+      include home-top-bar
+      include home-footer
   
