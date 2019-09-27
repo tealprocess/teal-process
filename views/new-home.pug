@@ -1,34 +1,54 @@
 extends layout.pug
 
 block title
-	| Gassed Up
+  | Teal Process & Company 
 
 block meta
-	meta(property='og:title' content='A Gassed Up Party')
-	meta(property='og:description' content='Collection brought to you by Teal Process & Company.')
-	meta(property='og:image' content='https://tealprocess.com../img/gassed/gassed-og.png')
-	
-	meta(name='twitter:card' content='summary_large_image')
-	meta(name='twitter:title' content='A Gassed Up Party')
-	meta(name='twitter:description' content='Collection brought to you by Teal Process & Company.')
-	meta(name='twitter:image' content='https://tealprocess.com../img/gassed/gassed-og-twitter-large.png')
+  meta(property='og:title' content='Teal Process & Company')
+  meta(property='og:description' content='')
+  meta(property='og:image' content='')
+  
+  meta(name='twitter:card' content='summary_large_image')
+  meta(name='twitter:title' content='Teal Process & Company')
+  meta(name='twitter:description' content='')
+  meta(name='twitter:image' content='')
 
 block localcss
-	link(rel='stylesheet' type='text/css' href='https://vjs.zencdn.net/5-unsafe/video-js.css')
-	link(rel='stylesheet' type='text/css' href='../css/gassed.css')
+  link(rel='stylesheet' type='text/css' href='../css/new-home.css')
+  link(rel='stylesheet' href='https://use.typekit.net/uzx7tew.css')
 
 block localscripts
-	script(src='../js/bodymovin.min.js')
-	script(src='../js/gassed.js')
-	script(src='https://vjs.zencdn.net/5-unsafe/video.js')
+  script(src='../js/new-home.js')
 
 block content
-	include gassed-nav.pug
-
-	.hero
-		img(style="display: none;" src="../img/gassed/hero.jpg" alt="")
-		.container
-			.title A Gassed Up Party
-			.time 6 HR 30 M
-			#mouse
-		.bg-fade
+  .room
+    .shelf
+      .inside-cover.inside-cover--is-mobile
+        include new-home-top-bar
+      .shelf__header
+        .shelf__header-headline Artifacts
+        .shelf__header-second-line
+          .shelf__header-subtitle
+            i by
+            span  teal process & company 
+          .shelf__header-nature#nature 🌻
+      a(href='/29-09').shelf__book 
+        .shelf__book-num 03
+        .shelf__book-title 29-09 Emergency Brake
+        .shelf__book-desc A publication for poetics 
+      a(href='https://www.are.na/teal/worklog-tp-c').shelf__book 
+        .shelf__book-num 02
+        .shelf__book-title Worklog
+        .shelf__book-desc A history of explorations
+      a(href='/gassed-up').shelf__book 
+        .shelf__book-num 01
+        .shelf__book-title Gassed Up
+        .shelf__book-desc Our first online artifact 
+      
+      .shelf__spacer 
+      .inside-cover.inside-cover--is-mobile
+        include new-home-footer
+    .inside-cover.inside-cover--is-desktop
+      include new-home-top-bar
+      include new-home-footer
+  
