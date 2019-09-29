@@ -294,6 +294,7 @@ p {
       font-weight: 800;
       font-size: 2.4rem;
       position: absolute;
+      margin-top: 0.3rem; 
       width: 2.5rem;
       @include base-transition();
       transition-delay: $delay-base * 2;

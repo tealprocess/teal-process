@@ -225,6 +225,7 @@ p.small {
       font-weight: 800;
       font-size: 2.4rem;
       position: absolute;
+      margin-top: 0.3rem;
       width: 2.5rem;
       transition: all 300ms ease-in-out;
       opacity: 1;
