@@ -6,54 +6,68 @@ $(document).ready(function(){
 	createThoughtScroller();
 
 	// sideways scroller for found artifacts
-	centerFoundScroller();
+	centerSideScroller('ak');
 	window.addEventListener('resize', throttle(function(ev) {
-		centerFoundScroller();
+		centerSideScroller('ak');
 	}, 10));
 
 
-	// helper functions found on csstricks and stackoverflow
-	var mX, mY, distance,
-      $element  = $('#thought-dot-1');
-
-  function calculateDistance(elem, mouseX, mouseY) {
-      return Math.floor(Math.sqrt(Math.pow(mouseX - (elem.offset().left+(elem.width()/2)), 2) + Math.pow(mouseY - (elem.offset().top+(elem.height()/2)), 2)));
-  }
-
-	function interpolateColor(color1, color2, factor) {
-    if (arguments.length < 3) {
-        factor = 0.5;
-    }
-
-		color1 = color1.match(/\d+/g).map(Number);
-		color2 = color2.match(/\d+/g).map(Number);
-    var result = color1.slice();
-    for (var i = 0; i < 3; i++) {
-        result[i] = Math.round(result[i] + factor * (color2[i] - color1[i]));
-    }
-    return result;
-	};
-
   $(document).mousemove(function(e) {
-      mX = e.pageX;
-      mY = e.pageY;
-			let radius = 255;
+      let mx = e.pageX;
+      let my = e.pageY;
 
-			let color1 = "rgb(255, 255, 255)";
-			let color2 = "rgb(16, 16, 16)";
-			let steps = 8;
-
-			for(let i = 1; i <= steps; i++) {
-				distance = calculateDistance($('#thought-dot-' + i), mX, mY);
-				if(distance < radius) {
-					let ratio = (distance / radius);
-					let color = interpolateColor(color1, color2, ratio);
-					let colorString = 'rgb(' + color[0] + ',' + color[1] + ',' + color[2] + ')';
-					$('#thought-dot-' + i).css('background-color', colorString);
-				}
-			}
+			updateThoughtDots(mx, my);
+			updateAnimalKingdom(mx, my);
   });
 });
+
+// for Animal kingdom
+function updateAnimalKingdom(mx, my){
+	const hoverImg = $('#ak-page-1');
+	let x = mx - hoverImg.offset().left;
+	let y = my - hoverImg.offset().top;
+
+	hoverImg.attr('style', `--clip-position: ${x}px ${y}px`);
+}
+
+
+// for Milky way
+function updateThoughtDots(mx, my){
+	let radius = 255;
+
+	let color1 = "rgb(255, 255, 255)";
+	let color2 = "rgb(16, 16, 16)";
+	let steps = 8;
+
+	for(let i = 1; i <= steps; i++) {
+		distance = calculateDistance($('#thought-dot-' + i), mx, my);
+		if(distance < radius) {
+			let ratio = (distance / radius);
+			let color = interpolateColor(color1, color2, ratio);
+			let colorString = 'rgb(' + color[0] + ',' + color[1] + ',' + color[2] + ')';
+			$('#thought-dot-' + i).css('background-color', colorString);
+		}
+	}
+}
+
+// helper functions for Milky way that Norm found on stackoverflow
+function calculateDistance(elem, mouseX, mouseY) {
+		return Math.floor(Math.sqrt(Math.pow(mouseX - (elem.offset().left+(elem.width()/2)), 2) + Math.pow(mouseY - (elem.offset().top+(elem.height()/2)), 2)));
+}
+
+function interpolateColor(color1, color2, factor) {
+	if (arguments.length < 3) {
+			factor = 0.5;
+	}
+
+	color1 = color1.match(/\d+/g).map(Number);
+	color2 = color2.match(/\d+/g).map(Number);
+	var result = color1.slice();
+	for (var i = 0; i < 3; i++) {
+			result[i] = Math.round(result[i] + factor * (color2[i] - color1[i]));
+	}
+	return result;
+};
 
 
 // used to display time while sounds are playing
@@ -218,13 +232,13 @@ function createThoughtScroller(){
 		.addTo(controller);
 }
 
-// centering the graidents
-function centerFoundScroller(){
-	let containerClass = '#found-container';
+// centering the sidways scroller by changing width of spacers
+function centerSideScroller(prefix){
+	let containerClass = '#' + prefix + '-container';
 	let negativeBuffer = 18;
 	let centeringMargin = $(containerClass).offset().left - negativeBuffer;
 
-	let elIds = ['found-scroll-front', 'found-scroll-back'];
+	let elIds = [prefix + '-scroll-front', prefix + '-scroll-back'];
 	for(let i = 0; i < elIds.length; i++){
 		$('#' + elIds[i]).css('width', centeringMargin + 'px');
 	}

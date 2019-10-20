@@ -5,6 +5,8 @@
     #{$property} : $css;
 }
 
+
+// include fonts
 @font-face {
   font-family: 'Hoefler Text';
   src: url('/../fonts/Hoefler Text.ttf') format('truetype');
@@ -25,6 +27,17 @@
   font-weight: normal;
   font-style: normal;
 }
+
+// easing variables
+$ak-home-easing: cubic-bezier(0.49, 0.82, 0.49, 1.25);
+$ak-home-duration: 1000ms;
+$ak-home-delay: 0ms;
+$ak-home-delay-2: 100ms;
+$ak-home-delay-3: 200ms;
+$ak-home-opacity-1: 1;
+$ak-home-opacity-2: 1;
+$ak-home-opacity-3: 1;
+
 
 
 $off-black: #101010;
@@ -300,5 +313,116 @@ a:hover {
   &-8 {
     margin-right: 0;
     margin-bottom: 5px;
+  }
+}
+
+
+// for sideways scrolling
+
+.scroll-sideways {
+  height: 65vh;
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+
+  overflow-x: scroll;
+  overflow-y: hidden;
+  white-space: nowrap;
+
+  -webkit-overflow-scrolling: touch;
+
+  &_spacer {
+    display: inline-block;
+    height: 100%;
+    width: 400px;
+  }
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  img {
+    max-height: 100%;
+    display: inline-block;
+  }
+}
+
+
+// for Animal kingdom
+
+.animal {
+  &__page {
+    --clip-position: 50% 50%;
+    height: 100%;
+    display: inline-block;
+
+    // the children of a page
+    img {
+      max-height: 100%;
+      position: absolute;
+    }
+
+    &--is-default {
+      @include crossBrowser(filter, grayscale(1));
+    }
+
+    &--is-hover {
+      opacity: $ak-home-opacity-1;
+      margin-top: 3px;
+      margin-left: 3px;
+      max-height: calc(100% - 6px);
+      @include crossBrowser(animation, ak-home $ak-home-duration $ak-home-easing $ak-home-delay infinite normal forwards);
+      // @include crossBrowser(transition, opacity 200ms ease-in-out);
+    }
+
+    &--is-hover-2 {
+      opacity: $ak-home-opacity-2;
+      margin-top: 2px;
+      margin-left: 2px;
+      max-height: calc(100% - 4px);
+      @include crossBrowser(animation, ak-home $ak-home-duration $ak-home-easing $ak-home-delay-2 infinite normal forwards);
+      // @include crossBrowser(transition, opacity 200ms ease-in-out);
+    }
+
+    &--is-hover-3 {
+      opacity: $ak-home-opacity-3;
+      margin-top: 1px;
+      margin-left: 1px;
+      max-height: calc(100% - 2px);
+      @include crossBrowser(animation, ak-home $ak-home-duration $ak-home-easing $ak-home-delay-3 infinite normal forwards);
+      // @include crossBrowser(transition, opacity 200ms ease-in-out);
+    }
+
+    &-hover-border {
+      position: absolute;
+      opacity: 1;
+      height: 100%;
+      background: red;
+      @include crossBrowser(animation, ak-home $ak-home-duration $ak-home-easing $ak-home-delay infinite normal forwards);
+    }
+
+    // hover of whole page element
+    &:hover {
+      .animal__page--is-hover {
+        // opacity: 1;
+      }
+    }
+  }
+}
+
+@keyframes ak-home {
+  0% {
+    clip-path: circle(8% at var(--clip-position));
+  }
+
+  50% {
+    clip-path: circle(25% at var(--clip-position));
+  }
+
+  100% {
+    clip-path: circle(8% at var(--clip-position));
   }
 }
