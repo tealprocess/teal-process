@@ -23,11 +23,13 @@ $(document).ready(function(){
 
 // for Animal kingdom
 function updateAnimalKingdom(mx, my){
-	const hoverImg = $('#ak-page-1');
-	let x = mx - hoverImg.offset().left;
-	let y = my - hoverImg.offset().top;
-
-	hoverImg.attr('style', `--clip-position: ${x}px ${y}px`);
+	// run through all journal pages
+	for (let i = 0; i < 2; i++) {
+		let pageContainer = $('#ak-page-' + (i + 1));
+		let x = mx - pageContainer.offset().left;
+		let y = my - pageContainer.offset().top;
+		pageContainer.attr('style', `--clip-position: ${x}px ${y}px`);
+	}
 }
 
 

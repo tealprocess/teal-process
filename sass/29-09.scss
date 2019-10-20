@@ -358,6 +358,12 @@ a:hover {
     --clip-position: 50% 50%;
     height: 100%;
     display: inline-block;
+    position: relative;
+    width: 414px;
+
+    &:nth-child(3) {
+      margin-bottom: -4rem;
+    }
 
     // the children of a page
     img {
@@ -371,6 +377,29 @@ a:hover {
 
     &--is-hover {
       opacity: $ak-home-opacity-1;
+      @include crossBrowser(filter, sepia(0.5));
+      @include crossBrowser(animation, ak-home $ak-home-duration $ak-home-easing $ak-home-delay infinite normal forwards);
+      // @include crossBrowser(transition, opacity 200ms ease-in-out);
+    }
+
+    &--is-hover-2 {
+      opacity: $ak-home-opacity-2;
+      @include crossBrowser(filter, sepia(0.25));
+      @include crossBrowser(animation, ak-home $ak-home-duration $ak-home-easing $ak-home-delay-2 infinite normal forwards);
+      // @include crossBrowser(transition, opacity 200ms ease-in-out);
+    }
+
+    &--is-hover-3 {
+      opacity: $ak-home-opacity-3;
+      @include crossBrowser(filter, sepia(0));
+      @include crossBrowser(animation, ak-home $ak-home-duration $ak-home-easing $ak-home-delay-3 infinite normal forwards);
+      // @include crossBrowser(transition, opacity 200ms ease-in-out);
+    }
+
+
+
+    &--is-hover-A {
+      opacity: $ak-home-opacity-1;
       margin-top: 3px;
       margin-left: 3px;
       max-height: calc(100% - 6px);
@@ -378,7 +407,7 @@ a:hover {
       // @include crossBrowser(transition, opacity 200ms ease-in-out);
     }
 
-    &--is-hover-2 {
+    &--is-hover-A-2 {
       opacity: $ak-home-opacity-2;
       margin-top: 2px;
       margin-left: 2px;
@@ -387,7 +416,7 @@ a:hover {
       // @include crossBrowser(transition, opacity 200ms ease-in-out);
     }
 
-    &--is-hover-3 {
+    &--is-hover-A-3 {
       opacity: $ak-home-opacity-3;
       margin-top: 1px;
       margin-left: 1px;
