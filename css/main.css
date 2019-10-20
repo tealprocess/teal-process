@@ -1,0 +1,53 @@
+@font-face {
+  font-family: 'DIN Condensed';
+  src: url("../fonts/DINCond/DINCond-Bold.eot");
+  src: url("../fonts/DINCond/DINCond-Bold.woff2") format("woff2"), url("../fonts/DINCond/DINCond-Bold.woff") format("woff"), url("../fonts/DINCond/DINCond-Bold.ttf") format("truetype"), url("../fonts/DINCond/DINCond-Bold.svg#DINCond-Bold") format("svg"), url("../fonts/DINCond/DINCond-Bold.eot?#iefix") format("embedded-opentype");
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'Hoefler Text';
+  src: url("../fonts/Hoefler Text.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal; }
+
+body, html {
+  height: 100%; }
+
+html {
+  font-size: 10px; }
+
+@media (max-width: 1500px) and (min-width: 1300px) {
+  .container {
+    width: 60%; } }
+
+@media (max-width: 1299px) and (min-width: 750px) {
+  .container {
+    width: 50%; } }
+
+@media (min-width: 550px) {
+  .container.preface {
+    max-width: 460px; }
+    .container.preface .six.columns {
+      width: 100%; } }
+
+@media all and (max-width: 1200px) {
+  html {
+    font-size: 8.5px; } }
+
+@media all and (max-width: 500px) {
+  html {
+    font-size: 8.2px; } }
+
+@media all and (max-width: 320px) {
+  html {
+    font-size: 6.7px; } }
+
+.four-oh-four {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+  .four-oh-four img {
+    width: 100%; }

@@ -1,0 +1,38 @@
+
+$blue: #4990E2;
+$light-blue: #A9CBE1;
+$green: #9BC8A2;
+$not-much-better-purple: #bcb3f1;
+//$purple: #C8C1ED;
+$purple: #a599e2;
+$red: #ED7474;
+$gray: #C6C6C6;
+$orange: #FAC990;
+
+
+html, body {
+    height: 100%;
+}
+
+
+// tried this fix for chrome android
+body {
+    -webkit-animation-delay: 0.1s;
+    -webkit-animation-name: fontfix;
+    -webkit-animation-duration: 0.1s;
+    -webkit-animation-iteration-count: 1;
+    -webkit-animation-timing-function: linear;
+}
+
+@-webkit-keyframes fontfix {
+    from { opacity: 1; }
+    to   { opacity: 1; }
+}
+
+@import 'video';
+@import 'gassed-hero';
+@import 'gassed-nav';
+@import 'gassed-section';
+@import 'gassed-gradients';
+@import 'gassed-preface';
+@import 'collection-footer';
