@@ -390,40 +390,165 @@ a:hover {
     -o-filter: grayscale(1);
     filter: grayscale(1); }
   .animal__page--is-hover-1 {
+    -webkit-clip-path: circle(0% at 0% 0%);
+    -moz-clip-path: circle(0% at 0% 0%);
+    -o-clip-path: circle(0% at 0% 0%);
     clip-path: circle(0% at 0% 0%); }
   .animal__page--is-hover-2 {
+    -webkit-clip-path: circle(0% at 0% 0%);
+    -moz-clip-path: circle(0% at 0% 0%);
+    -o-clip-path: circle(0% at 0% 0%);
     clip-path: circle(0% at 0% 0%); }
   .animal__page--is-hover-3 {
+    -webkit-clip-path: circle(0% at 0% 0%);
+    -moz-clip-path: circle(0% at 0% 0%);
+    -o-clip-path: circle(0% at 0% 0%);
     clip-path: circle(0% at 0% 0%); }
 
 @keyframes ak-home {
   0% {
+    -webkit-clip-path: circle(8% at var(--clip-x) var(--clip-y));
+    -moz-clip-path: circle(8% at var(--clip-x) var(--clip-y));
+    -o-clip-path: circle(8% at var(--clip-x) var(--clip-y));
     clip-path: circle(8% at var(--clip-x) var(--clip-y)); }
   50% {
+    -webkit-clip-path: circle(25% at var(--clip-x) var(--clip-y));
+    -moz-clip-path: circle(25% at var(--clip-x) var(--clip-y));
+    -o-clip-path: circle(25% at var(--clip-x) var(--clip-y));
     clip-path: circle(25% at var(--clip-x) var(--clip-y)); }
   100% {
+    -webkit-clip-path: circle(8% at var(--clip-x) var(--clip-y));
+    -moz-clip-path: circle(8% at var(--clip-x) var(--clip-y));
+    -o-clip-path: circle(8% at var(--clip-x) var(--clip-y));
+    clip-path: circle(8% at var(--clip-x) var(--clip-y)); } }
+
+@-webkit-keyframes ak-home {
+  0% {
+    -webkit-clip-path: circle(8% at var(--clip-x) var(--clip-y));
+    -moz-clip-path: circle(8% at var(--clip-x) var(--clip-y));
+    -o-clip-path: circle(8% at var(--clip-x) var(--clip-y));
+    clip-path: circle(8% at var(--clip-x) var(--clip-y)); }
+  50% {
+    -webkit-clip-path: circle(25% at var(--clip-x) var(--clip-y));
+    -moz-clip-path: circle(25% at var(--clip-x) var(--clip-y));
+    -o-clip-path: circle(25% at var(--clip-x) var(--clip-y));
+    clip-path: circle(25% at var(--clip-x) var(--clip-y)); }
+  100% {
+    -webkit-clip-path: circle(8% at var(--clip-x) var(--clip-y));
+    -moz-clip-path: circle(8% at var(--clip-x) var(--clip-y));
+    -o-clip-path: circle(8% at var(--clip-x) var(--clip-y));
     clip-path: circle(8% at var(--clip-x) var(--clip-y)); } }
 
 @keyframes ak-fear {
   0% {
+    -webkit-clip-path: polygon(var(--clip-x) calc(var(--clip-y) - 70px), calc(var(--clip-x) + 70px) var(--clip-y), var(--clip-x) calc(var(--clip-y) + 70px), calc(var(--clip-x) - 70px) var(--clip-y));
+    -moz-clip-path: polygon(var(--clip-x) calc(var(--clip-y) - 70px), calc(var(--clip-x) + 70px) var(--clip-y), var(--clip-x) calc(var(--clip-y) + 70px), calc(var(--clip-x) - 70px) var(--clip-y));
+    -o-clip-path: polygon(var(--clip-x) calc(var(--clip-y) - 70px), calc(var(--clip-x) + 70px) var(--clip-y), var(--clip-x) calc(var(--clip-y) + 70px), calc(var(--clip-x) - 70px) var(--clip-y));
     clip-path: polygon(var(--clip-x) calc(var(--clip-y) - 70px), calc(var(--clip-x) + 70px) var(--clip-y), var(--clip-x) calc(var(--clip-y) + 70px), calc(var(--clip-x) - 70px) var(--clip-y)); }
   10% {
+    -webkit-clip-path: polygon(var(--clip-x) calc(var(--clip-y) - 130px), calc(var(--clip-x) + 130px) var(--clip-y), var(--clip-x) calc(var(--clip-y) + 130px), calc(var(--clip-x) - 130px) var(--clip-y));
+    -moz-clip-path: polygon(var(--clip-x) calc(var(--clip-y) - 130px), calc(var(--clip-x) + 130px) var(--clip-y), var(--clip-x) calc(var(--clip-y) + 130px), calc(var(--clip-x) - 130px) var(--clip-y));
+    -o-clip-path: polygon(var(--clip-x) calc(var(--clip-y) - 130px), calc(var(--clip-x) + 130px) var(--clip-y), var(--clip-x) calc(var(--clip-y) + 130px), calc(var(--clip-x) - 130px) var(--clip-y));
     clip-path: polygon(var(--clip-x) calc(var(--clip-y) - 130px), calc(var(--clip-x) + 130px) var(--clip-y), var(--clip-x) calc(var(--clip-y) + 130px), calc(var(--clip-x) - 130px) var(--clip-y)); }
   20% {
+    -webkit-clip-path: polygon(var(--clip-x) calc(var(--clip-y) - 110px), calc(var(--clip-x) + 110px) var(--clip-y), var(--clip-x) calc(var(--clip-y) + 110px), calc(var(--clip-x) - 110px) var(--clip-y));
+    -moz-clip-path: polygon(var(--clip-x) calc(var(--clip-y) - 110px), calc(var(--clip-x) + 110px) var(--clip-y), var(--clip-x) calc(var(--clip-y) + 110px), calc(var(--clip-x) - 110px) var(--clip-y));
+    -o-clip-path: polygon(var(--clip-x) calc(var(--clip-y) - 110px), calc(var(--clip-x) + 110px) var(--clip-y), var(--clip-x) calc(var(--clip-y) + 110px), calc(var(--clip-x) - 110px) var(--clip-y));
     clip-path: polygon(var(--clip-x) calc(var(--clip-y) - 110px), calc(var(--clip-x) + 110px) var(--clip-y), var(--clip-x) calc(var(--clip-y) + 110px), calc(var(--clip-x) - 110px) var(--clip-y)); }
   30% {
+    -webkit-clip-path: polygon(var(--clip-x) calc(var(--clip-y) - 140px), calc(var(--clip-x) + 140px) var(--clip-y), var(--clip-x) calc(var(--clip-y) + 140px), calc(var(--clip-x) - 140px) var(--clip-y));
+    -moz-clip-path: polygon(var(--clip-x) calc(var(--clip-y) - 140px), calc(var(--clip-x) + 140px) var(--clip-y), var(--clip-x) calc(var(--clip-y) + 140px), calc(var(--clip-x) - 140px) var(--clip-y));
+    -o-clip-path: polygon(var(--clip-x) calc(var(--clip-y) - 140px), calc(var(--clip-x) + 140px) var(--clip-y), var(--clip-x) calc(var(--clip-y) + 140px), calc(var(--clip-x) - 140px) var(--clip-y));
     clip-path: polygon(var(--clip-x) calc(var(--clip-y) - 140px), calc(var(--clip-x) + 140px) var(--clip-y), var(--clip-x) calc(var(--clip-y) + 140px), calc(var(--clip-x) - 140px) var(--clip-y)); }
   40% {
+    -webkit-clip-path: polygon(var(--clip-x) calc(var(--clip-y) - 50px), calc(var(--clip-x) + 50px) var(--clip-y), var(--clip-x) calc(var(--clip-y) + 50px), calc(var(--clip-x) - 50px) var(--clip-y));
+    -moz-clip-path: polygon(var(--clip-x) calc(var(--clip-y) - 50px), calc(var(--clip-x) + 50px) var(--clip-y), var(--clip-x) calc(var(--clip-y) + 50px), calc(var(--clip-x) - 50px) var(--clip-y));
+    -o-clip-path: polygon(var(--clip-x) calc(var(--clip-y) - 50px), calc(var(--clip-x) + 50px) var(--clip-y), var(--clip-x) calc(var(--clip-y) + 50px), calc(var(--clip-x) - 50px) var(--clip-y));
     clip-path: polygon(var(--clip-x) calc(var(--clip-y) - 50px), calc(var(--clip-x) + 50px) var(--clip-y), var(--clip-x) calc(var(--clip-y) + 50px), calc(var(--clip-x) - 50px) var(--clip-y)); }
   50% {
+    -webkit-clip-path: polygon(var(--clip-x) calc(var(--clip-y) - 60px), calc(var(--clip-x) + 60px) var(--clip-y), var(--clip-x) calc(var(--clip-y) + 60px), calc(var(--clip-x) - 60px) var(--clip-y));
+    -moz-clip-path: polygon(var(--clip-x) calc(var(--clip-y) - 60px), calc(var(--clip-x) + 60px) var(--clip-y), var(--clip-x) calc(var(--clip-y) + 60px), calc(var(--clip-x) - 60px) var(--clip-y));
+    -o-clip-path: polygon(var(--clip-x) calc(var(--clip-y) - 60px), calc(var(--clip-x) + 60px) var(--clip-y), var(--clip-x) calc(var(--clip-y) + 60px), calc(var(--clip-x) - 60px) var(--clip-y));
     clip-path: polygon(var(--clip-x) calc(var(--clip-y) - 60px), calc(var(--clip-x) + 60px) var(--clip-y), var(--clip-x) calc(var(--clip-y) + 60px), calc(var(--clip-x) - 60px) var(--clip-y)); }
   60% {
+    -webkit-clip-path: polygon(var(--clip-x) calc(var(--clip-y) - 30px), calc(var(--clip-x) + 30px) var(--clip-y), var(--clip-x) calc(var(--clip-y) + 30px), calc(var(--clip-x) - 30px) var(--clip-y));
+    -moz-clip-path: polygon(var(--clip-x) calc(var(--clip-y) - 30px), calc(var(--clip-x) + 30px) var(--clip-y), var(--clip-x) calc(var(--clip-y) + 30px), calc(var(--clip-x) - 30px) var(--clip-y));
+    -o-clip-path: polygon(var(--clip-x) calc(var(--clip-y) - 30px), calc(var(--clip-x) + 30px) var(--clip-y), var(--clip-x) calc(var(--clip-y) + 30px), calc(var(--clip-x) - 30px) var(--clip-y));
     clip-path: polygon(var(--clip-x) calc(var(--clip-y) - 30px), calc(var(--clip-x) + 30px) var(--clip-y), var(--clip-x) calc(var(--clip-y) + 30px), calc(var(--clip-x) - 30px) var(--clip-y)); }
   70% {
+    -webkit-clip-path: polygon(var(--clip-x) calc(var(--clip-y) - 50px), calc(var(--clip-x) + 50px) var(--clip-y), var(--clip-x) calc(var(--clip-y) + 50px), calc(var(--clip-x) - 50px) var(--clip-y));
+    -moz-clip-path: polygon(var(--clip-x) calc(var(--clip-y) - 50px), calc(var(--clip-x) + 50px) var(--clip-y), var(--clip-x) calc(var(--clip-y) + 50px), calc(var(--clip-x) - 50px) var(--clip-y));
+    -o-clip-path: polygon(var(--clip-x) calc(var(--clip-y) - 50px), calc(var(--clip-x) + 50px) var(--clip-y), var(--clip-x) calc(var(--clip-y) + 50px), calc(var(--clip-x) - 50px) var(--clip-y));
     clip-path: polygon(var(--clip-x) calc(var(--clip-y) - 50px), calc(var(--clip-x) + 50px) var(--clip-y), var(--clip-x) calc(var(--clip-y) + 50px), calc(var(--clip-x) - 50px) var(--clip-y)); }
   80% {
+    -webkit-clip-path: polygon(var(--clip-x) calc(var(--clip-y) - 80px), calc(var(--clip-x) + 80px) var(--clip-y), var(--clip-x) calc(var(--clip-y) + 80px), calc(var(--clip-x) - 80px) var(--clip-y));
+    -moz-clip-path: polygon(var(--clip-x) calc(var(--clip-y) - 80px), calc(var(--clip-x) + 80px) var(--clip-y), var(--clip-x) calc(var(--clip-y) + 80px), calc(var(--clip-x) - 80px) var(--clip-y));
+    -o-clip-path: polygon(var(--clip-x) calc(var(--clip-y) - 80px), calc(var(--clip-x) + 80px) var(--clip-y), var(--clip-x) calc(var(--clip-y) + 80px), calc(var(--clip-x) - 80px) var(--clip-y));
     clip-path: polygon(var(--clip-x) calc(var(--clip-y) - 80px), calc(var(--clip-x) + 80px) var(--clip-y), var(--clip-x) calc(var(--clip-y) + 80px), calc(var(--clip-x) - 80px) var(--clip-y)); }
   90% {
+    -webkit-clip-path: polygon(var(--clip-x) calc(var(--clip-y) - 90px), calc(var(--clip-x) + 90px) var(--clip-y), var(--clip-x) calc(var(--clip-y) + 90px), calc(var(--clip-x) - 90px) var(--clip-y));
+    -moz-clip-path: polygon(var(--clip-x) calc(var(--clip-y) - 90px), calc(var(--clip-x) + 90px) var(--clip-y), var(--clip-x) calc(var(--clip-y) + 90px), calc(var(--clip-x) - 90px) var(--clip-y));
+    -o-clip-path: polygon(var(--clip-x) calc(var(--clip-y) - 90px), calc(var(--clip-x) + 90px) var(--clip-y), var(--clip-x) calc(var(--clip-y) + 90px), calc(var(--clip-x) - 90px) var(--clip-y));
     clip-path: polygon(var(--clip-x) calc(var(--clip-y) - 90px), calc(var(--clip-x) + 90px) var(--clip-y), var(--clip-x) calc(var(--clip-y) + 90px), calc(var(--clip-x) - 90px) var(--clip-y)); }
   100% {
+    -webkit-clip-path: polygon(var(--clip-x) calc(var(--clip-y) - 70px), calc(var(--clip-x) + 70px) var(--clip-y), var(--clip-x) calc(var(--clip-y) + 70px), calc(var(--clip-x) - 70px) var(--clip-y));
+    -moz-clip-path: polygon(var(--clip-x) calc(var(--clip-y) - 70px), calc(var(--clip-x) + 70px) var(--clip-y), var(--clip-x) calc(var(--clip-y) + 70px), calc(var(--clip-x) - 70px) var(--clip-y));
+    -o-clip-path: polygon(var(--clip-x) calc(var(--clip-y) - 70px), calc(var(--clip-x) + 70px) var(--clip-y), var(--clip-x) calc(var(--clip-y) + 70px), calc(var(--clip-x) - 70px) var(--clip-y));
+    clip-path: polygon(var(--clip-x) calc(var(--clip-y) - 70px), calc(var(--clip-x) + 70px) var(--clip-y), var(--clip-x) calc(var(--clip-y) + 70px), calc(var(--clip-x) - 70px) var(--clip-y)); } }
+
+@-webkit-keyframes ak-fear {
+  0% {
+    -webkit-clip-path: polygon(var(--clip-x) calc(var(--clip-y) - 70px), calc(var(--clip-x) + 70px) var(--clip-y), var(--clip-x) calc(var(--clip-y) + 70px), calc(var(--clip-x) - 70px) var(--clip-y));
+    -moz-clip-path: polygon(var(--clip-x) calc(var(--clip-y) - 70px), calc(var(--clip-x) + 70px) var(--clip-y), var(--clip-x) calc(var(--clip-y) + 70px), calc(var(--clip-x) - 70px) var(--clip-y));
+    -o-clip-path: polygon(var(--clip-x) calc(var(--clip-y) - 70px), calc(var(--clip-x) + 70px) var(--clip-y), var(--clip-x) calc(var(--clip-y) + 70px), calc(var(--clip-x) - 70px) var(--clip-y));
+    clip-path: polygon(var(--clip-x) calc(var(--clip-y) - 70px), calc(var(--clip-x) + 70px) var(--clip-y), var(--clip-x) calc(var(--clip-y) + 70px), calc(var(--clip-x) - 70px) var(--clip-y)); }
+  10% {
+    -webkit-clip-path: polygon(var(--clip-x) calc(var(--clip-y) - 130px), calc(var(--clip-x) + 130px) var(--clip-y), var(--clip-x) calc(var(--clip-y) + 130px), calc(var(--clip-x) - 130px) var(--clip-y));
+    -moz-clip-path: polygon(var(--clip-x) calc(var(--clip-y) - 130px), calc(var(--clip-x) + 130px) var(--clip-y), var(--clip-x) calc(var(--clip-y) + 130px), calc(var(--clip-x) - 130px) var(--clip-y));
+    -o-clip-path: polygon(var(--clip-x) calc(var(--clip-y) - 130px), calc(var(--clip-x) + 130px) var(--clip-y), var(--clip-x) calc(var(--clip-y) + 130px), calc(var(--clip-x) - 130px) var(--clip-y));
+    clip-path: polygon(var(--clip-x) calc(var(--clip-y) - 130px), calc(var(--clip-x) + 130px) var(--clip-y), var(--clip-x) calc(var(--clip-y) + 130px), calc(var(--clip-x) - 130px) var(--clip-y)); }
+  20% {
+    -webkit-clip-path: polygon(var(--clip-x) calc(var(--clip-y) - 110px), calc(var(--clip-x) + 110px) var(--clip-y), var(--clip-x) calc(var(--clip-y) + 110px), calc(var(--clip-x) - 110px) var(--clip-y));
+    -moz-clip-path: polygon(var(--clip-x) calc(var(--clip-y) - 110px), calc(var(--clip-x) + 110px) var(--clip-y), var(--clip-x) calc(var(--clip-y) + 110px), calc(var(--clip-x) - 110px) var(--clip-y));
+    -o-clip-path: polygon(var(--clip-x) calc(var(--clip-y) - 110px), calc(var(--clip-x) + 110px) var(--clip-y), var(--clip-x) calc(var(--clip-y) + 110px), calc(var(--clip-x) - 110px) var(--clip-y));
+    clip-path: polygon(var(--clip-x) calc(var(--clip-y) - 110px), calc(var(--clip-x) + 110px) var(--clip-y), var(--clip-x) calc(var(--clip-y) + 110px), calc(var(--clip-x) - 110px) var(--clip-y)); }
+  30% {
+    -webkit-clip-path: polygon(var(--clip-x) calc(var(--clip-y) - 140px), calc(var(--clip-x) + 140px) var(--clip-y), var(--clip-x) calc(var(--clip-y) + 140px), calc(var(--clip-x) - 140px) var(--clip-y));
+    -moz-clip-path: polygon(var(--clip-x) calc(var(--clip-y) - 140px), calc(var(--clip-x) + 140px) var(--clip-y), var(--clip-x) calc(var(--clip-y) + 140px), calc(var(--clip-x) - 140px) var(--clip-y));
+    -o-clip-path: polygon(var(--clip-x) calc(var(--clip-y) - 140px), calc(var(--clip-x) + 140px) var(--clip-y), var(--clip-x) calc(var(--clip-y) + 140px), calc(var(--clip-x) - 140px) var(--clip-y));
+    clip-path: polygon(var(--clip-x) calc(var(--clip-y) - 140px), calc(var(--clip-x) + 140px) var(--clip-y), var(--clip-x) calc(var(--clip-y) + 140px), calc(var(--clip-x) - 140px) var(--clip-y)); }
+  40% {
+    -webkit-clip-path: polygon(var(--clip-x) calc(var(--clip-y) - 50px), calc(var(--clip-x) + 50px) var(--clip-y), var(--clip-x) calc(var(--clip-y) + 50px), calc(var(--clip-x) - 50px) var(--clip-y));
+    -moz-clip-path: polygon(var(--clip-x) calc(var(--clip-y) - 50px), calc(var(--clip-x) + 50px) var(--clip-y), var(--clip-x) calc(var(--clip-y) + 50px), calc(var(--clip-x) - 50px) var(--clip-y));
+    -o-clip-path: polygon(var(--clip-x) calc(var(--clip-y) - 50px), calc(var(--clip-x) + 50px) var(--clip-y), var(--clip-x) calc(var(--clip-y) + 50px), calc(var(--clip-x) - 50px) var(--clip-y));
+    clip-path: polygon(var(--clip-x) calc(var(--clip-y) - 50px), calc(var(--clip-x) + 50px) var(--clip-y), var(--clip-x) calc(var(--clip-y) + 50px), calc(var(--clip-x) - 50px) var(--clip-y)); }
+  50% {
+    -webkit-clip-path: polygon(var(--clip-x) calc(var(--clip-y) - 60px), calc(var(--clip-x) + 60px) var(--clip-y), var(--clip-x) calc(var(--clip-y) + 60px), calc(var(--clip-x) - 60px) var(--clip-y));
+    -moz-clip-path: polygon(var(--clip-x) calc(var(--clip-y) - 60px), calc(var(--clip-x) + 60px) var(--clip-y), var(--clip-x) calc(var(--clip-y) + 60px), calc(var(--clip-x) - 60px) var(--clip-y));
+    -o-clip-path: polygon(var(--clip-x) calc(var(--clip-y) - 60px), calc(var(--clip-x) + 60px) var(--clip-y), var(--clip-x) calc(var(--clip-y) + 60px), calc(var(--clip-x) - 60px) var(--clip-y));
+    clip-path: polygon(var(--clip-x) calc(var(--clip-y) - 60px), calc(var(--clip-x) + 60px) var(--clip-y), var(--clip-x) calc(var(--clip-y) + 60px), calc(var(--clip-x) - 60px) var(--clip-y)); }
+  60% {
+    -webkit-clip-path: polygon(var(--clip-x) calc(var(--clip-y) - 30px), calc(var(--clip-x) + 30px) var(--clip-y), var(--clip-x) calc(var(--clip-y) + 30px), calc(var(--clip-x) - 30px) var(--clip-y));
+    -moz-clip-path: polygon(var(--clip-x) calc(var(--clip-y) - 30px), calc(var(--clip-x) + 30px) var(--clip-y), var(--clip-x) calc(var(--clip-y) + 30px), calc(var(--clip-x) - 30px) var(--clip-y));
+    -o-clip-path: polygon(var(--clip-x) calc(var(--clip-y) - 30px), calc(var(--clip-x) + 30px) var(--clip-y), var(--clip-x) calc(var(--clip-y) + 30px), calc(var(--clip-x) - 30px) var(--clip-y));
+    clip-path: polygon(var(--clip-x) calc(var(--clip-y) - 30px), calc(var(--clip-x) + 30px) var(--clip-y), var(--clip-x) calc(var(--clip-y) + 30px), calc(var(--clip-x) - 30px) var(--clip-y)); }
+  70% {
+    -webkit-clip-path: polygon(var(--clip-x) calc(var(--clip-y) - 50px), calc(var(--clip-x) + 50px) var(--clip-y), var(--clip-x) calc(var(--clip-y) + 50px), calc(var(--clip-x) - 50px) var(--clip-y));
+    -moz-clip-path: polygon(var(--clip-x) calc(var(--clip-y) - 50px), calc(var(--clip-x) + 50px) var(--clip-y), var(--clip-x) calc(var(--clip-y) + 50px), calc(var(--clip-x) - 50px) var(--clip-y));
+    -o-clip-path: polygon(var(--clip-x) calc(var(--clip-y) - 50px), calc(var(--clip-x) + 50px) var(--clip-y), var(--clip-x) calc(var(--clip-y) + 50px), calc(var(--clip-x) - 50px) var(--clip-y));
+    clip-path: polygon(var(--clip-x) calc(var(--clip-y) - 50px), calc(var(--clip-x) + 50px) var(--clip-y), var(--clip-x) calc(var(--clip-y) + 50px), calc(var(--clip-x) - 50px) var(--clip-y)); }
+  80% {
+    -webkit-clip-path: polygon(var(--clip-x) calc(var(--clip-y) - 80px), calc(var(--clip-x) + 80px) var(--clip-y), var(--clip-x) calc(var(--clip-y) + 80px), calc(var(--clip-x) - 80px) var(--clip-y));
+    -moz-clip-path: polygon(var(--clip-x) calc(var(--clip-y) - 80px), calc(var(--clip-x) + 80px) var(--clip-y), var(--clip-x) calc(var(--clip-y) + 80px), calc(var(--clip-x) - 80px) var(--clip-y));
+    -o-clip-path: polygon(var(--clip-x) calc(var(--clip-y) - 80px), calc(var(--clip-x) + 80px) var(--clip-y), var(--clip-x) calc(var(--clip-y) + 80px), calc(var(--clip-x) - 80px) var(--clip-y));
+    clip-path: polygon(var(--clip-x) calc(var(--clip-y) - 80px), calc(var(--clip-x) + 80px) var(--clip-y), var(--clip-x) calc(var(--clip-y) + 80px), calc(var(--clip-x) - 80px) var(--clip-y)); }
+  90% {
+    -webkit-clip-path: polygon(var(--clip-x) calc(var(--clip-y) - 90px), calc(var(--clip-x) + 90px) var(--clip-y), var(--clip-x) calc(var(--clip-y) + 90px), calc(var(--clip-x) - 90px) var(--clip-y));
+    -moz-clip-path: polygon(var(--clip-x) calc(var(--clip-y) - 90px), calc(var(--clip-x) + 90px) var(--clip-y), var(--clip-x) calc(var(--clip-y) + 90px), calc(var(--clip-x) - 90px) var(--clip-y));
+    -o-clip-path: polygon(var(--clip-x) calc(var(--clip-y) - 90px), calc(var(--clip-x) + 90px) var(--clip-y), var(--clip-x) calc(var(--clip-y) + 90px), calc(var(--clip-x) - 90px) var(--clip-y));
+    clip-path: polygon(var(--clip-x) calc(var(--clip-y) - 90px), calc(var(--clip-x) + 90px) var(--clip-y), var(--clip-x) calc(var(--clip-y) + 90px), calc(var(--clip-x) - 90px) var(--clip-y)); }
+  100% {
+    -webkit-clip-path: polygon(var(--clip-x) calc(var(--clip-y) - 70px), calc(var(--clip-x) + 70px) var(--clip-y), var(--clip-x) calc(var(--clip-y) + 70px), calc(var(--clip-x) - 70px) var(--clip-y));
+    -moz-clip-path: polygon(var(--clip-x) calc(var(--clip-y) - 70px), calc(var(--clip-x) + 70px) var(--clip-y), var(--clip-x) calc(var(--clip-y) + 70px), calc(var(--clip-x) - 70px) var(--clip-y));
+    -o-clip-path: polygon(var(--clip-x) calc(var(--clip-y) - 70px), calc(var(--clip-x) + 70px) var(--clip-y), var(--clip-x) calc(var(--clip-y) + 70px), calc(var(--clip-x) - 70px) var(--clip-y));
     clip-path: polygon(var(--clip-x) calc(var(--clip-y) - 70px), calc(var(--clip-x) + 70px) var(--clip-y), var(--clip-x) calc(var(--clip-y) + 70px), calc(var(--clip-x) - 70px) var(--clip-y)); } }

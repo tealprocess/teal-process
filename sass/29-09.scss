@@ -491,15 +491,15 @@ a:hover {
     }
 
     &--is-hover-1 {
-      clip-path: circle(0% at 0% 0%); // default is to not show image
+      @include crossBrowser(clip-path, circle(0% at 0% 0%)); // default is to not show image
     }
 
     &--is-hover-2 {
-      clip-path: circle(0% at 0% 0%);
+      @include crossBrowser(clip-path, circle(0% at 0% 0%));
     }
 
     &--is-hover-3 {
-      clip-path: circle(0% at 0% 0%);
+      @include crossBrowser(clip-path, circle(0% at 0% 0%));
     }
 
     // hover of whole page element
@@ -511,25 +511,85 @@ a:hover {
 
 @keyframes ak-home {
   0% {
-    clip-path: circle(8% at $clipx $clipy);
+    @include crossBrowser(clip-path, circle(8% at $clipx $clipy));
   }
 
   50% {
-    clip-path: circle(25% at $clipx $clipy);
+    @include crossBrowser(clip-path, circle(25% at $clipx $clipy));
   }
 
   100% {
-    clip-path: circle(8% at $clipx $clipy);
+    @include crossBrowser(clip-path, circle(8% at $clipx $clipy));
+  }
+}
+
+@-webkit-keyframes ak-home {
+  0% {
+    @include crossBrowser(clip-path, circle(8% at $clipx $clipy));
+  }
+
+  50% {
+    @include crossBrowser(clip-path, circle(25% at $clipx $clipy));
+  }
+
+  100% {
+    @include crossBrowser(clip-path, circle(8% at $clipx $clipy));
   }
 }
 
 @mixin clip-diamond($size) {
   // this looks gnarly, it's setting the polygon points to:
   // (x y-size, x+size y, x y+size, x-size y)
-  clip-path: polygon($clipx calc(#{$clipy} - #{$size}), calc(#{$clipx} + #{$size}) $clipy, $clipx calc(#{$clipy} + #{$size}), calc(#{$clipx} - #{$size}) $clipy);
+  @include crossBrowser(clip-path, polygon($clipx calc(#{$clipy} - #{$size}), calc(#{$clipx} + #{$size}) $clipy, $clipx calc(#{$clipy} + #{$size}), calc(#{$clipx} - #{$size}) $clipy));
 }
 
 @keyframes ak-fear {
+  0% {
+    @include clip-diamond(70px);
+  }
+
+  10% {
+    @include clip-diamond(130px);
+  }
+
+  20% {
+    @include clip-diamond(110px);
+  }
+
+  30% {
+    @include clip-diamond(140px);
+  }
+
+  40% {
+    @include clip-diamond(50px);
+  }
+
+  50% {
+    @include clip-diamond(60px);
+  }
+
+  60% {
+    @include clip-diamond(30px);
+  }
+
+  70% {
+    @include clip-diamond(50px);
+  }
+
+  80% {
+    @include clip-diamond(80px);
+  }
+
+  90% {
+    @include clip-diamond(90px);
+  }
+
+  100% {
+    @include clip-diamond(70px);
+  }
+}
+
+@-webkit-keyframes ak-fear {
   0% {
     @include clip-diamond(70px);
   }

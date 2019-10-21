@@ -16,6 +16,8 @@ $(document).ready(function(){
       let mx = e.pageX;
       let my = e.pageY;
 
+			console.log(mx, e.clientX);
+
 			updateThoughtDots(mx, my);
 			updateAnimalKingdom(mx, my);
   });
@@ -25,7 +27,7 @@ $(document).ready(function(){
 		let elId = $(this).attr('id');
 		let emotion = elId.split('ak-emotion-')[1];
 
-		// resets whole class so we need to maintain the base classes 
+		// resets whole class so we need to maintain the base classes
 		let newClass = 'scroll-sideways animal animal-emotion--is-' + emotion;
 		$('#ak-scroll-container').attr('class', newClass);
 	});
