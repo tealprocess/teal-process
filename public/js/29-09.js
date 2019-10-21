@@ -19,16 +19,36 @@ $(document).ready(function(){
 			updateThoughtDots(mx, my);
 			updateAnimalKingdom(mx, my);
   });
+
+	// change hover effect when we encounter a new emotion
+	$('.animal__page').mouseenter(function(e){
+		let elId = $(this).attr('id');
+		let emotion = elId.split('ak-emotion-')[1];
+
+		// resets whole class so we need to maintain the base classes 
+		let newClass = 'scroll-sideways animal animal-emotion--is-' + emotion;
+		$('#ak-scroll-container').attr('class', newClass);
+	});
+
+	// need to get offset of scroll and update mouse position with that
+	//
+	// $(document).scroll(function(e){
+	// 	console.log(e);
+	// 	let mx = e.pageX;
+	// 	let my = e.pageY;
+	// 	updateAnimalKingdom(mx, my);
+	// });
 });
 
 // for Animal kingdom
 function updateAnimalKingdom(mx, my){
 	// run through all journal pages
-	for (let i = 0; i < 2; i++) {
-		let pageContainer = $('#ak-page-' + (i + 1));
+	let akPages = $('.animal__page').toArray();
+	for (let i = 0; i < akPages.length; i++) {
+		let pageContainer = $(akPages[i]);
 		let x = mx - pageContainer.offset().left;
 		let y = my - pageContainer.offset().top;
-		pageContainer.attr('style', `--clip-position: ${x}px ${y}px`);
+		pageContainer.attr('style', `--clip-x: ${x}px; --clip-y: ${y}px`);
 	}
 }
 
@@ -237,7 +257,7 @@ function createThoughtScroller(){
 // centering the sidways scroller by changing width of spacers
 function centerSideScroller(prefix){
 	let containerClass = '#' + prefix + '-container';
-	let negativeBuffer = 18;
+	let negativeBuffer = 0; // used to be 18
 	let centeringMargin = $(containerClass).offset().left - negativeBuffer;
 
 	let elIds = [prefix + '-scroll-front', prefix + '-scroll-back'];

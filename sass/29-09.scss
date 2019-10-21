@@ -5,6 +5,13 @@
     #{$property} : $css;
 }
 
+@mixin crossBrowser2($property, $css, $css2) {
+    -webkit-#{$property} : $css, $css2;
+    -moz-#{$property} : $css, $css2;
+    -o-#{$property} : $css, $css2;
+    #{$property} : $css, $css2;
+}
+
 
 // include fonts
 @font-face {
@@ -34,10 +41,18 @@ $ak-home-duration: 1000ms;
 $ak-home-delay: 0ms;
 $ak-home-delay-2: 100ms;
 $ak-home-delay-3: 200ms;
-$ak-home-opacity-1: 1;
-$ak-home-opacity-2: 1;
-$ak-home-opacity-3: 1;
 
+
+$ak-fear-duration: 800ms;
+$ak-fear-easing: steps(3, jump-both);
+
+$ak-fourth-easing: ease-in-out;
+
+$ak-third-page-duration: 500ms;
+
+
+$clipx: var(--clip-x);
+$clipy: var(--clip-y);
 
 
 $off-black: #101010;
@@ -354,104 +369,208 @@ a:hover {
 // for Animal kingdom
 
 .animal {
+  &-emotion--is-home {
+    .animal__page {
+      &--is-hover-1 {
+        margin-top: 3px;
+        margin-left: 3px;
+        max-height: calc(100% - 6px);
+        @include crossBrowser(animation, ak-home $ak-home-duration $ak-home-easing $ak-home-delay infinite normal forwards);
+      }
+
+      &--is-hover-2 {
+        margin-top: 2px;
+        margin-left: 2px;
+        max-height: calc(100% - 4px);
+        @include crossBrowser(animation, ak-home $ak-home-duration $ak-home-easing $ak-home-delay-2 infinite normal forwards);
+      }
+
+      &--is-hover-3 {
+        margin-top: 1px;
+        margin-left: 1px;
+        max-height: calc(100% - 2px);
+        @include crossBrowser(animation, ak-home $ak-home-duration $ak-home-easing $ak-home-delay-3 infinite normal forwards);
+      }
+    }
+  }
+
+  &-emotion--is-fear {
+    .animal__page {
+      &--is-hover-1 {
+        // @include crossBrowser(filter, brightness(0.6));
+        // @include crossBrowser(animation, ak-fear $ak-fear-duration $ak-fear-easing $ak-home-delay infinite normal forwards);
+      }
+
+      &--is-hover-2 {
+        @include crossBrowser(filter, brightness(0.8));
+        @include crossBrowser(animation, ak-fear $ak-fear-duration $ak-fear-easing $ak-home-delay-2 infinite normal forwards);
+      }
+
+      &--is-hover-3 {
+        // @include crossBrowser(filter, brightness(1));
+        // @include crossBrowser(animation, ak-fear $ak-fear-duration $ak-fear-easing $ak-home-delay-3 infinite normal forwards);
+      }
+    }
+  }
+
+  &-emotion--is-third {
+    #ak-emotion-third {
+      border: 2px solid rgba(0,0,0,0.1);
+
+      .animal__page--is-default {
+        @include crossBrowser(filter, grayscale(1) opacity(0));
+      }
+    }
+
+    .animal__page {
+      &--is-hover-1 {
+        @include crossBrowser(filter, brightness(1.8));
+        @include crossBrowser(animation, ak-home $ak-home-duration $ak-home-easing $ak-home-delay infinite normal forwards);
+      }
+
+      &--is-hover-2 {
+        @include crossBrowser(filter, brightness(1.4));
+        @include crossBrowser(animation, ak-home $ak-home-duration $ak-home-easing $ak-home-delay-2 infinite normal forwards);
+      }
+
+      &--is-hover-3 {
+        @include crossBrowser(filter, brightness(1));
+        @include crossBrowser(animation, ak-home $ak-home-duration $ak-home-easing $ak-home-delay-3 infinite normal forwards);
+      }
+    }
+  }
+
+  &-emotion--is-fourth {
+    .animal__page {
+      &--is-hover-1 {
+        @include crossBrowser(filter, sepia(0.5));
+        @include crossBrowser(animation, ak-home $ak-home-duration $ak-fourth-easing $ak-home-delay infinite normal forwards);
+      }
+
+      &--is-hover-2 {
+        @include crossBrowser(filter, sepia(0.25));
+        @include crossBrowser(animation, ak-home $ak-home-duration $ak-fourth-easing $ak-home-delay-2 infinite normal forwards);
+      }
+
+      &--is-hover-3 {
+        @include crossBrowser(filter, sepia(0));
+        @include crossBrowser(animation, ak-home $ak-home-duration $ak-fourth-easing $ak-home-delay-3 infinite normal forwards);
+      }
+    }
+  }
+
   &__page {
     --clip-position: 50% 50%;
     height: 100%;
     display: inline-block;
     position: relative;
-    width: 414px;
+    width: 440px;
+    border-radius: 5px;
+    margin-right: 2rem;
+    border: 2px solid rgba(0,0,0,0);
+    @include crossBrowser2(transition, box-shadow $ak-third-page-duration ease-in-out, border $ak-third-page-duration ease-in-out);
 
     &:nth-child(3) {
       margin-bottom: -4rem;
     }
 
+    &:nth-child(5) {
+      margin-bottom: -4rem;
+    }
+
     // the children of a page
     img {
+      border-radius: 5px;
       max-height: 100%;
       position: absolute;
     }
 
     &--is-default {
+      @include crossBrowser(transition, filter $ak-third-page-duration ease-in-out);
       @include crossBrowser(filter, grayscale(1));
     }
 
-    &--is-hover {
-      opacity: $ak-home-opacity-1;
-      @include crossBrowser(filter, sepia(0.5));
-      @include crossBrowser(animation, ak-home $ak-home-duration $ak-home-easing $ak-home-delay infinite normal forwards);
-      // @include crossBrowser(transition, opacity 200ms ease-in-out);
+    &--is-hover-1 {
+      clip-path: circle(0% at 0% 0%); // default is to not show image
     }
 
     &--is-hover-2 {
-      opacity: $ak-home-opacity-2;
-      @include crossBrowser(filter, sepia(0.25));
-      @include crossBrowser(animation, ak-home $ak-home-duration $ak-home-easing $ak-home-delay-2 infinite normal forwards);
-      // @include crossBrowser(transition, opacity 200ms ease-in-out);
+      clip-path: circle(0% at 0% 0%);
     }
 
     &--is-hover-3 {
-      opacity: $ak-home-opacity-3;
-      @include crossBrowser(filter, sepia(0));
-      @include crossBrowser(animation, ak-home $ak-home-duration $ak-home-easing $ak-home-delay-3 infinite normal forwards);
-      // @include crossBrowser(transition, opacity 200ms ease-in-out);
-    }
-
-
-
-    &--is-hover-A {
-      opacity: $ak-home-opacity-1;
-      margin-top: 3px;
-      margin-left: 3px;
-      max-height: calc(100% - 6px);
-      @include crossBrowser(animation, ak-home $ak-home-duration $ak-home-easing $ak-home-delay infinite normal forwards);
-      // @include crossBrowser(transition, opacity 200ms ease-in-out);
-    }
-
-    &--is-hover-A-2 {
-      opacity: $ak-home-opacity-2;
-      margin-top: 2px;
-      margin-left: 2px;
-      max-height: calc(100% - 4px);
-      @include crossBrowser(animation, ak-home $ak-home-duration $ak-home-easing $ak-home-delay-2 infinite normal forwards);
-      // @include crossBrowser(transition, opacity 200ms ease-in-out);
-    }
-
-    &--is-hover-A-3 {
-      opacity: $ak-home-opacity-3;
-      margin-top: 1px;
-      margin-left: 1px;
-      max-height: calc(100% - 2px);
-      @include crossBrowser(animation, ak-home $ak-home-duration $ak-home-easing $ak-home-delay-3 infinite normal forwards);
-      // @include crossBrowser(transition, opacity 200ms ease-in-out);
-    }
-
-    &-hover-border {
-      position: absolute;
-      opacity: 1;
-      height: 100%;
-      background: red;
-      @include crossBrowser(animation, ak-home $ak-home-duration $ak-home-easing $ak-home-delay infinite normal forwards);
+      clip-path: circle(0% at 0% 0%);
     }
 
     // hover of whole page element
     &:hover {
-      .animal__page--is-hover {
-        // opacity: 1;
-      }
+
     }
   }
 }
 
 @keyframes ak-home {
   0% {
-    clip-path: circle(8% at var(--clip-position));
+    clip-path: circle(8% at $clipx $clipy);
   }
 
   50% {
-    clip-path: circle(25% at var(--clip-position));
+    clip-path: circle(25% at $clipx $clipy);
   }
 
   100% {
-    clip-path: circle(8% at var(--clip-position));
+    clip-path: circle(8% at $clipx $clipy);
+  }
+}
+
+@mixin clip-diamond($size) {
+  // this looks gnarly, it's setting the polygon points to:
+  // (x y-size, x+size y, x y+size, x-size y)
+  clip-path: polygon($clipx calc(#{$clipy} - #{$size}), calc(#{$clipx} + #{$size}) $clipy, $clipx calc(#{$clipy} + #{$size}), calc(#{$clipx} - #{$size}) $clipy);
+}
+
+@keyframes ak-fear {
+  0% {
+    @include clip-diamond(70px);
+  }
+
+  10% {
+    @include clip-diamond(130px);
+  }
+
+  20% {
+    @include clip-diamond(110px);
+  }
+
+  30% {
+    @include clip-diamond(140px);
+  }
+
+  40% {
+    @include clip-diamond(50px);
+  }
+
+  50% {
+    @include clip-diamond(60px);
+  }
+
+  60% {
+    @include clip-diamond(30px);
+  }
+
+  70% {
+    @include clip-diamond(50px);
+  }
+
+  80% {
+    @include clip-diamond(80px);
+  }
+
+  90% {
+    @include clip-diamond(90px);
+  }
+
+  100% {
+    @include clip-diamond(70px);
   }
 }
