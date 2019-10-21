@@ -10,7 +10,7 @@
     "css": "node-sass sass/ -o public/css",
     "css:watch": "npm run css && node-sass sass/ -wo public/css",
     "dev": "npm start & npm run css:watch",
-    "build": "for filename in views; do pug ${filename} && python build-py-3.py; done"
+    "build-prod": "for filename in views; do pug ${filename} && python build-py-3.py; done"
   },
   "repository": {
     "type": "git",
