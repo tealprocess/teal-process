@@ -90,9 +90,9 @@ body {
 .video-js .vjs-big-play-button,
 .video-js .vjs-menu-button .vjs-menu-content {
   /* IE8 - has no alpha support */
-  background-color: transparent;
+  background-color: rgba(0, 0, 0, 0);
   /* Opacity: 1.0 = 100%, 0.0 = 0% */
-  background-color: transparent !important; }
+  background-color: rgba(0, 0, 0, 0) !important; }
 
 /* Slider - used for Volume bar and Progress bar */
 .video-js .vjs-slider {

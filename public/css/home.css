@@ -18,6 +18,14 @@ p.small {
   line-height: 18px;
   font-weight: normal; }
 
+p.small-top {
+  line-height: 21px; }
+  p.small-top a {
+    color: white !important; }
+    p.small-top a:hover {
+      text-decoration: none;
+      opacity: 0.75; }
+
 .room {
   display: flex;
   justify-content: space-between;
