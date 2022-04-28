@@ -91,10 +91,6 @@ p {
   justify-content: space-between;
   font-weight: 500;
 
-  a {
-    color: white;
-  }
-
   &--is-mobile {
     display: none;
 
@@ -109,6 +105,10 @@ p {
     position: relative;
     opacity: 0;
     @include crossBrowser(animation, fade-in $primary-duration $primary-easing $delay-base*9 1 normal forwards);
+
+    a {
+      color: white;
+    }
   }
 
   &__bottom {

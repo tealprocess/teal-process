@@ -42,8 +42,6 @@ p.small-top {
   flex-direction: column;
   justify-content: space-between;
   font-weight: 500; }
-  .inside-cover a {
-    color: white; }
   .inside-cover--is-mobile {
     display: none;
     position: relative;
@@ -58,6 +56,8 @@ p.small-top {
     -moz-animation: fade-in 300ms ease-in-out 315ms 1 normal forwards;
     -o-animation: fade-in 300ms ease-in-out 315ms 1 normal forwards;
     animation: fade-in 300ms ease-in-out 315ms 1 normal forwards; }
+    .inside-cover__top a {
+      color: white; }
   .inside-cover__bottom {
     position: relative; }
     .inside-cover__bottom a {
