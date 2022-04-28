@@ -91,6 +91,10 @@ p {
   justify-content: space-between;
   font-weight: 500;
 
+  a {
+    color: white;
+  }
+
   &--is-mobile {
     display: none;
 
@@ -517,7 +521,7 @@ p {
       font-size: 2.2rem;
     }
   }
-  
+
   .shelf__book {
     padding-left: 0;
   }
