@@ -511,6 +511,13 @@ p {
 
 // phones
 @media only screen and (max-width: 450px) {
+
+  .shelf {
+    &__header-subtitle {
+      font-size: 2.2rem;
+    }
+  }
+  
   .shelf__book {
     padding-left: 0;
   }

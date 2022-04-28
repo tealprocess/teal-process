@@ -377,6 +377,8 @@ p.small-top {
     margin-bottom: 8rem; } }
 
 @media only screen and (max-width: 450px) {
+  .shelf__header-subtitle {
+    font-size: 2.2rem; }
   .shelf__book {
     padding-left: 0; }
   .shelf__spacer {
