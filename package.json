@@ -28,7 +28,7 @@
   "dependencies": {
     "body-parser": "*",
     "compression": "^1.6.2",
-    "express": "^4.6.1",
+    "express": "^4.17.3",
     "express-redirect": "^1.2.2",
     "fs": "0.0.2",
     "jade": "^1.9.2",
